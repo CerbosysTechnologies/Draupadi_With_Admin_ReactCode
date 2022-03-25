@@ -51,7 +51,7 @@ const ProductList = (props) => {
                           <h2
                             className="title"
                             style={{
-                              color: "#BA7D82",
+                              color: "#000000",
                               fontSize: 18,
                               fontWeight: 600,
                             }}

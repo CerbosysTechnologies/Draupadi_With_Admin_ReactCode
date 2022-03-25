@@ -82,7 +82,7 @@ const Footer = () => {
     };
     return (
       <p className="text">
-        {isReadMore ? text.slice(0, 280) : text}
+        {isReadMore ? text.slice(0, 190) : text}
         <span
           onClick={toggleReadMore}
           className="read-or-hide cursor-pointer font bold text-blue-500"
@@ -92,12 +92,13 @@ const Footer = () => {
               id="myBtn"
               style={{
                 backgroundColor: "#2f2f2f",
-                padding: "6px",
+                padding: "3px",
                 color: "white",
                 borderRadius: "5px",
                 fontSize: "14px",
                 fontFamily: "Amiri-serif",
                 fontWeight: 100,
+                marginLeft: "5px"
               }}
             >
               Read more
@@ -107,12 +108,13 @@ const Footer = () => {
               id="myBtn"
               style={{
                 backgroundColor: "#2f2f2f",
-                padding: "6px",
+                padding: "3px",
                 color: "white",
                 borderRadius: "5px",
                 fontSize: "14px",
                 fontFamily: "Amiri-serif",
                 fontWeight: 100,
+                marginLeft: "5px"
               }}
             >
               Show less
@@ -265,17 +267,7 @@ justify-content:space-between;"
                     Draupadi was established in February 2021 at Mathura, the
                     homeland and birthplace of Lord Krishna. Mathura is known
                     for its textile industry and especially for Sari Printing &
-                    Manufacturing. Most of the villages around Mathura have
-                    conditions of poverty leading to malnutrition, child labour,
-                    scarce resources for an average family size of 6-8, and lack
-                    of purpose to avail education, especially for the girl
-                    child.The idea behind establishing this unit was to provide
-                    an avenue of employment to the under-privileged to uplift
-                    and empower them while creating quality products. Draupadi
-                    upcycles the Sari wastes to develop vibrant and trendy bags
-                    & accessories. These bags & accessories are made by the
-                    underprivileged women residing in the nearby villages of
-                    Mathura..
+                    Manufacturing. Draupadi upcycles sari wastes to create quirky bags and accessories. Women from underprivileged backgrounds make all our products. We at Draupadi also aim at slow fashion and sustainability. All our products are handmade with concern for the environment and its people.
                   </ReadMore>
                 </p>
               </strong>

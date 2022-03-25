@@ -264,7 +264,7 @@ const Pcategory = (props) => {
               <strong
                 className="!ml-[10px]"
                 style={{
-                  color: "#BA7D82",
+                  color: "#000000",
                   fontFamily: "Amiri, serif",
                   textTransform: "capitalize",
                   fontSize: "30px",
@@ -318,7 +318,7 @@ const Pcategory = (props) => {
                       }}
                     />
                     <strong style={{ paddingLeft: "5px" }}>
-                      &nbsp; CHOOSE YOUR DESIGN&nbsp;&nbsp;&nbsp;
+                      &nbsp; Choose your design&nbsp;&nbsp;&nbsp;
                     </strong>
                   </span>
 
@@ -620,7 +620,7 @@ const Pcategory = (props) => {
                         // });
                       }}
                       className=" p-2"
-                      Style="background-color:#BA7D82;color:white;border-radius:5px;height:40px;width:150px;"
+                      Style="background-color:#000000;color:white;border-radius:5px;height:40px;width:150px;"
                     >
                       <strong style={{ color: "white",fontSize:'16px',fontWeight:'100' }}> ADD TO CART</strong>
                     </button>
@@ -645,7 +645,7 @@ const Pcategory = (props) => {
                               }
                             );
                           }}
-                          className="bg-[#606060] cursor-pointer flex items-center space-x-1 inline p-2 rounded-md text-white w-[180px] "
+                          className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 inline p-1 rounded-md text-white w-[185px]  " style={{border:"3px solid black"}}
                         >
                           <span>
                             <RiHeart3Fill
@@ -659,7 +659,7 @@ const Pcategory = (props) => {
                               }}
                             />
                           </span>
-                          <span>ADD TO WISHLIST</span>
+                          <span style={{fontWeight:'100', color:"black"}} >ADD TO WISHLIST</span>
                         </div>
                       ) : (
                         <div
@@ -696,20 +696,20 @@ const Pcategory = (props) => {
                               );
                             }
                           }}
-                          className="bg-[#606060] cursor-pointer flex items-center space-x-1 p-2 rounded-md text-white w-[180px]"
+                      className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 p-1 rounded-md text-white w-[185px]" style={{border:"3px solid black"}}
                         >
                           <span>
                             <RiHeart3Line
                               // size={10}
                               style={{
                                 // paddingLeft: 10,
-
+                                color:"black",
                                 width: 25,
                                 height: 25,
                                 fontWeight:'100',                              }}
                             />
                           </span>
-                          <span style={{fontWeight:'100'}}>ADD TO WISHLIST</span>
+                          <span style={{fontWeight:'100', color:"black"}}>ADD TO WISHLIST</span>
                         </div>
                       )}
                     </span>
@@ -717,7 +717,7 @@ const Pcategory = (props) => {
                   <br />
                   <br />
                   <span className="flex flex-col justify-start">
-                    <span>
+                    {/* <span>
                       <span className="flex items-baseline">
                         <span className="flex border-2 border-[#606060] rounded-[9px]">
                           <span className=" px-1 flex items-center justify-center bg-[#606060] text-white border-2 border-[#606060] rounded-tl-md rounded-bl-md" style={{fontWeight:'100'}}>
@@ -747,9 +747,9 @@ const Pcategory = (props) => {
                       >
                         {promoCodeError ? `*${promoCodeError}*` : ""}
                       </span>
-                    </span>
+                    </span> */}
                     <span className="">
-                      <strong style={{ color: "#BA7D82" }}>DESCRIPTION</strong>
+                      <strong style={{ color: "#000000" }}>Description</strong>
                     <hr></hr>
                     </span>
                     

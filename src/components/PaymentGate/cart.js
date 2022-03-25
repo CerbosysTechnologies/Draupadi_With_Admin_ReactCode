@@ -18,10 +18,11 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { message } from "antd";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import moment from "moment";
 import { MdDeleteForever } from "react-icons/md";
 import { useHistory } from "react-router-dom";
+import { NoEncryption } from "@material-ui/icons";
 const Cart = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -244,32 +245,32 @@ const Cart = (props) => {
                       console.log("Response", response.data.id);
                       var idd = response.data;
                       dispatch({ type: "CLEAR_CART" });
-                      toast(
-                        `Order has placed successfully, you will receive tracking details shortly 🥰😍 `,
-                        {
-                          position: "top-center",
-                          autoClose: 3000,
-                          hideProgressBar: true,
-                          closeOnClick: true,
-                          pauseOnHover: false,
-                          draggable: true,
-                          progress: undefined,
-                        }
-                      );
+                      // toast(
+                      //   `Order has placed successfully, you will receive tracking details shortly 🥰😍 `,
+                      //   {
+                      //     position: "top-center",
+                      //     autoClose: 3000,
+                      //     hideProgressBar: true,
+                      //     closeOnClick: true,
+                      //     pauseOnHover: false,
+                      //     draggable: true,
+                      //     progress: undefined,
+                      //   }
+                      // );
                       history.push("/");
                     })
                     .catch((err) => {
                       setLoading(false);
                       console.log(err);
-                      toast.error(`Oops, something went wrong `, {
-                        position: "top-center",
-                        autoClose: 3000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: false,
-                        draggable: true,
-                        progress: undefined,
-                      });
+                      // toast.error(`Oops, something went wrong `, {
+                      //   position: "top-center",
+                      //   autoClose: 3000,
+                      //   hideProgressBar: true,
+                      //   closeOnClick: true,
+                      //   pauseOnHover: false,
+                      //   draggable: true,
+                      //   progress: undefined,
+                      // });
                     });
                 }
               },
@@ -284,29 +285,29 @@ const Cart = (props) => {
           }
           displayRazorpay();
         } else {
-          toast.error(`Oops, something went wrong `, {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-          });
+          // toast.error(`Oops, something went wrong `, {
+          //   position: "top-center",
+          //   autoClose: 3000,
+          //   hideProgressBar: true,
+          //   closeOnClick: true,
+          //   pauseOnHover: false,
+          //   draggable: true,
+          //   progress: undefined,
+          // });
         }
       })
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        toast(`Oops, something went wrong `, {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-        });
+        // toast(`Oops, something went wrong `, {
+        //   position: "top-center",
+        //   autoClose: 3000,
+        //   hideProgressBar: true,
+        //   closeOnClick: true,
+        //   pauseOnHover: false,
+        //   draggable: true,
+        //   progress: undefined,
+        // });
       });
   };
 
@@ -382,32 +383,32 @@ const Cart = (props) => {
             console.log("Response", response.data.id);
             // var idd = response.data;
             dispatch({ type: "CLEAR_CART" });
-            toast(
-              `Order has placed successfully, you will receive tracking details shortly🥰😍 `,
-              {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-              }
-            );
+            // toast(
+            //   `Order has placed successfully, you will receive tracking details shortly🥰😍 `,
+            //   {
+            //     position: "top-center",
+            //     autoClose: 3000,
+            //     hideProgressBar: true,
+            //     closeOnClick: true,
+            //     pauseOnHover: false,
+            //     draggable: true,
+            //     progress: undefined,
+            //   }
+            // );
             history.push("/");
           })
           .catch((err) => {
             setLoading(false);
             console.log(err);
-            toast(`Something went wrong `, {
-              position: "top-center",
-              autoClose: 3000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: true,
-              progress: undefined,
-            });
+            // toast(`Something went wrong `, {
+            //   position: "top-center",
+            //   autoClose: 3000,
+            //   hideProgressBar: true,
+            //   closeOnClick: true,
+            //   pauseOnHover: false,
+            //   draggable: true,
+            //   progress: undefined,
+            // });
           });
       });
   };
@@ -723,7 +724,7 @@ const Cart = (props) => {
                 <Link to="/products" Style="text-decoration: none;">
                   <h2
                     className="title"
-                    style={{ color: "#B77304", fontSize: "18px" }}
+                    style={{ color: "#000000", fontSize: "18px" }}
                   >
                     <AiOutlineArrowLeft
                       style={{ paddingRight: 15, fontSize: 45 }}
@@ -878,18 +879,18 @@ const Cart = (props) => {
                                 type: "REMOVE_FROM_CART",
                                 payload: data.uid,
                               });
-                              toast(
-                                `${data.product_name} is removed from your cart ! 😥😥 `,
-                                {
-                                  position: "top-center",
-                                  autoClose: 3000,
-                                  hideProgressBar: true,
-                                  closeOnClick: true,
-                                  pauseOnHover: false,
-                                  draggable: true,
-                                  progress: undefined,
-                                }
-                              );
+                              // toast(
+                              //   `${data.product_name} is removed from your cart ! 😥😥 `,
+                              //   {
+                              //     position: "top-center",
+                              //     autoClose: 3000,
+                              //     hideProgressBar: true,
+                              //     closeOnClick: true,
+                              //     pauseOnHover: false,
+                              //     draggable: true,
+                              //     progress: undefined,
+                              //   }
+                              // );
                             }}
                             style={{ color: "#808080" }}
                           >
@@ -1020,26 +1021,27 @@ const Cart = (props) => {
                         type: "CLEAR_CART",
                         payload: null,
                       });
-                      toast(`Your cart  has been Cleared 😥😥 `, {
-                        position: "top-center",
-                        autoClose: 3000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: false,
-                        draggable: true,
-                        progress: undefined,
-                      });
+                      // toast(`Your cart  has been Cleared 😥😥 `, {
+                      //   position: "top-center",
+                      //   autoClose: 3000,
+                      //   hideProgressBar: true,
+                      //   closeOnClick: true,
+                      //   pauseOnHover: false,
+                      //   draggable: true,
+                      //   progress: undefined,
+                      // });
                       // toast("Cart is cleared successfully");
                       // message.success("Cart is cleared successfully");
                     }}
                     style={{
                       borderRadius: 5,
-                      height: 45,
+                      height: 4500,
                       fontSize: 15,
                       fontWeight: "bold",
                       backgroundColor: "#808080",
                       color: "white",
                       marginLeft: 30,
+                      display: "none"
                     }}
                     className="button is-large flex items-center "
                   >
@@ -1053,7 +1055,7 @@ const Cart = (props) => {
               </div>
             </div>
           </div>
-          <ToastContainer
+          {/* <ToastContainer
             position="top-center"
             autoClose={2000}
             hideProgressBar={false}
@@ -1063,12 +1065,12 @@ const Cart = (props) => {
             pauseOnFocusLoss
             draggable
             pauseOnHover
-          />
+          /> */}
         </div>
       ) : (
         <div className="container" style={{ textAlign: "center" }}>
           <div className="title has-text-grey-light">No item in cart!</div>
-          <ToastContainer
+          {/* <ToastContainer
             position="top-center"
             autoClose={2000}
             hideProgressBar={false}
@@ -1078,7 +1080,7 @@ const Cart = (props) => {
             pauseOnFocusLoss
             draggable
             pauseOnHover
-          />
+          /> */}
         </div>
       )}
     </>

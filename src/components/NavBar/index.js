@@ -72,7 +72,7 @@ const NavBar = (props) => {
   const userToken = useSelector((state) => state.user).token;
   return (
     <nav
-      // style={{ justifyContent: "right", backgroundColor: "white", zIndex: 20 }}
+      style={{ justifyContent: "right", backgroundColor: "white", zIndex: 20}}
       className="flex h-[90px] justify-center items-center !max-w-screen sticky top-0  bg-[#f1f0f0] px-4 z-20 "
 
       //   `${
