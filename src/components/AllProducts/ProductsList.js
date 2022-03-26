@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductItem from "./ProductItem";
 import withContext from "../AllProducts/button";
 import "./product.css";
+import { useLocation } from "react-router-dom";
 // import Pcategory from "./productCategaory";
 // import authHeaderuser from "../../services/auth-headers";
 // import axios from "axios";
 // import { Table } from "react-bootstrap";
 //import Footer from '../Footer/index'
-
+import queryString from "query-string";
 const ProductList = (props) => {
+  // const [search, setSearch] = useState("");
   const { products } = props.context;
   const { navItems } = props;
+  const { search } = useLocation();
+  const { productSearch } = queryString.parse(search);
 
   return (
     <>
@@ -72,6 +76,14 @@ const ProductList = (props) => {
                                 products
                                   .filter(
                                     (cat) => cat.category_id === x.category_id
+                                  )
+                                  .filter((product) =>
+                                {  if(productSearch){
+                                        return product.product_name.toLowerCase().includes(productSearch.toLowerCase())
+                                  }else{
+                                    return product
+                                  }
+                                    }
                                   )
                                   .map((product, index) => (
                                     <>

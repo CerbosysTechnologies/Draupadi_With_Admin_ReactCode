@@ -13,7 +13,7 @@ import "../../Pages/products/potlis";
 import "../Home/index";
 import "./nav.css";
 // import "./navbar.css";
-
+import { Modal, Button, Space } from "antd";
 import { CgMenu } from "react-icons/cg";
 import "../../component/form.css";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
@@ -32,11 +32,21 @@ import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FiUser } from "react-icons/fi";
+import { AiOutlineSearch } from "react-icons/ai";
 
 var scrollToElement = require("scroll-to-element");
 const NavBar = (props) => {
+  const [visible, setVisible] = useState(false);
+
+  const showModal = () => {
+    setVisible(true);
+  };
+
+  const hideModal = () => {
+    setVisible(false);
+  };
   const [navBar, setNavBar] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [search, setSearch] = useState("");
   const [side, setSide] = useState(false);
 
   const [category, setcategory] = useState([]);
@@ -64,15 +74,26 @@ const NavBar = (props) => {
       });
   }, []);
 
-  const wishcount = useSelector((state) => state.wishlist).length;
-
   const cartcount = useSelector((state) => state.cart).length;
 
   const user = useSelector((state) => state.user).user_name;
   const userToken = useSelector((state) => state.user).token;
+
+  const SearchProduct = () => {
+    if (search !== "") {
+      history.push({
+        pathname: "/products",
+        search: `?productSearch=${search}`,
+        // state: { detail: 'some_value' }
+      });
+    }
+    hideModal();
+    setSearch("");
+  };
+
   return (
     <nav
-      style={{ justifyContent: "right", backgroundColor: "white", zIndex: 20}}
+      style={{ justifyContent: "right", backgroundColor: "white", zIndex: 20 }}
       className="flex h-[90px] justify-center items-center !max-w-screen sticky top-0  bg-[#f1f0f0] px-4 z-20 "
 
       //   `${
@@ -241,6 +262,7 @@ const NavBar = (props) => {
                 </li>
               )}
               <li
+                onClick={showModal}
                 className="nav-item "
                 style={{
                   // paddingRight: 10,
@@ -250,11 +272,7 @@ const NavBar = (props) => {
                   cursor: "pointer",
                 }}
               >
-                <NavLink to="/Mywishlist">
-                  {wishcount ? <div className="pcount ">{wishcount} </div> : ""}
-
-                  <FaHeart className="hover:text-red-500 hover:animate-bounce transition-all duration-200 text-xl !mr-4 md:!mr-1 " />
-                </NavLink>
+                <AiOutlineSearch size={20} />
               </li>
               <li
                 onClick={() => {
@@ -299,10 +317,29 @@ const NavBar = (props) => {
             // aria-expanded="false"
             // aria-label="Toggle navigation"
           >
-            <CgMenu size={24}  />
+            <CgMenu size={24} />
           </button>
         </div>
       </div>
+      <Modal
+        // title="Search product"
+        visible={visible}
+        onOk={SearchProduct}
+        onCancel={hideModal}
+        okText="Search"
+        cancelText="Cancel"
+      >
+        <div className="flex items-center  border-1 rounded-md p-1 mt-4">
+          <input
+            type="text"
+            placeholder="Search Products.."
+            className="h-8 border-gray-500 w-full pl-2 outline-none"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+          <AiOutlineSearch size={20} className="mr-3" />
+        </div>
+      </Modal>
     </nav>
   );
 };
