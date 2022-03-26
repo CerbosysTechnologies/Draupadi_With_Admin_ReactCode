@@ -572,9 +572,9 @@ function TestCart() {
   };
 
   return (
-    <div className="w-full mx-1 px-2 overflow-scroll   md:!flex  ">
+    <div className="max-w-[1100px] mx-auto px-2    md:!flex  ">
       {/* Address list */}
-      <div className=" flex-grow pr-1 md:border-r-[1px] border-slate-300 ">
+      <div className=" flex-grow pr-1 md:border-r-[1px] border-slate-300 mr-9">
         {/* //<h2>&nbsp;</h2> */}
         <p className="mt-2 text-[18px]">Contact Information</p>
         <form onSubmit={(e) => addUpdateAddress(e)} method="POST">
@@ -708,7 +708,7 @@ function TestCart() {
                   </Link>
                 </div>
               </div>
-              <div className="col">
+              <div className="">
                 <div className="container">
                   <div className="row">
                     <div className="column" style={{ textAlign: "center" }}>
@@ -746,8 +746,8 @@ function TestCart() {
                   </div>
                 </div>
                 {/* <br /> */}
-                <div className="row">
-                  <div className="container">
+                <div className="">
+                  <div className="">
                     {/* <div className="column"> */}
                       {/* {cartKeys.map(key => (
               <CartItem
@@ -758,16 +758,16 @@ function TestCart() {
               />
             ))} */}
 
-                      <div className="flex-col max-w-[450px] mx-auto">
+                      <div className="flex-col max-w-[550px] mx-auto">
                         {cartitem.map((data) => {
                           return (
-                            <div className="flex items-center justify-between my-4">
+                            <div className="flex items-center justify-between my-2">
                               <div className="flex items-center space-x-2">
                                 <img
                                   src={`https://cerbosys.in:4000/${data.product_image.substr(
                                     8
                                   )}`}
-                                  className="w-[70px] h-[80px] object-cover rounded-md"
+                                  className="w-[60px] h-[70px] object-cover rounded-md"
                                 />
                                 <div>
                                   <span>{data?.product_name}</span>
@@ -781,7 +781,7 @@ function TestCart() {
                             </div>
                           );
                         })}
-                        <hr />
+                        {/* <hr />
                         <div className="flex justify-between my-4 space-x-2">
                           <input
                             type="text"
@@ -791,14 +791,14 @@ function TestCart() {
                           <button className="px-4 bg-slate-400 rounded-lg h-12">
                             Apply
                           </button>
-                        </div>
+                        </div> */}
                         <hr />
-                        <div className="flex justify-between my-4">
+                        <div className="flex justify-between my-2">
                           <span>Subtotal</span>
                           <span>Rs.{totalPrice}</span>
                         </div>
                         <hr />
-                        <div className="flex justify-between my-4">
+                        <div className="flex justify-between my-2">
                           <span className="font-bold">Total</span>
                           <span className="font-bold text-2xl">
                             Rs {totalPrice}
