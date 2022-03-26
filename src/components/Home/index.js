@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <div>
         {/**Wish count start */}
-        <div className="fixed z-10 top-1/2 bg-orange-500 p-1 flex items-center  justify-center">
+        <div className="fixed z-10 top-1/2 bg-orange-500 p-1 px-2 flex items-center  justify-center">
           <NavLink to="/Mywishlist" className="text-white flex no-underline text-md">
             {/* {wishcount ? <div className="pcount ">{wishcount} </div> : ""} */}
 

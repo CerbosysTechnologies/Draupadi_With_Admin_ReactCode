@@ -151,15 +151,15 @@ function TestCart() {
             },
           });
           history.push("/cart");
-          toast(`Data saved successfully 🤗 `, {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-          });
+          // toast(`Data saved successfully 🤗 `, {
+          //   position: "top-center",
+          //   autoClose: 3000,
+          //   hideProgressBar: true,
+          //   closeOnClick: true,
+          //   pauseOnHover: false,
+          //   draggable: true,
+          //   progress: undefined,
+          // });
         }
 
         if (res.data.status == 400) {
@@ -574,7 +574,7 @@ function TestCart() {
   return (
     <div className="w-full mx-1 px-2 overflow-scroll   md:!flex  ">
       {/* Address list */}
-      <div className=" flex-grow pr-1 md:border-r-[1px] border-slate-300 md:w-1/2">
+      <div className=" flex-grow pr-1 md:border-r-[1px] border-slate-300 ">
         {/* //<h2>&nbsp;</h2> */}
         <p className="mt-2 text-[18px]">Contact Information</p>
         <form onSubmit={(e) => addUpdateAddress(e)} method="POST">
@@ -687,11 +687,11 @@ function TestCart() {
       </div>
       <hr />
       {/* Cart part */}
-      <div className="flex-grow md:w-1/2 pr-2">
+      <div className="flex-grow  pr-2 p-8">
         {cartitem.length ? (
           <div className="">
             <div className="row">
-              <div className="col">
+              <div className="">
                 <div className="container" style={{ minWidth: 150 }}>
                   <Link to="/products" Style="text-decoration: none;">
                     <h2
@@ -748,7 +748,7 @@ function TestCart() {
                 {/* <br /> */}
                 <div className="row">
                   <div className="container">
-                    <div className="column">
+                    {/* <div className="column"> */}
                       {/* {cartKeys.map(key => (
               <CartItem
                 cartKey={key}
@@ -758,129 +758,57 @@ function TestCart() {
               />
             ))} */}
 
-                      {cartitem.map((data) => {
-                        return (
-                          <div className="mycart_div relative ">
-                            <div className="mycart-productimagedetail-div">
-                              <div className="mycart_productimage_div">
+                      <div className="flex-col max-w-[450px] mx-auto">
+                        {cartitem.map((data) => {
+                          return (
+                            <div className="flex items-center justify-between my-4">
+                              <div className="flex items-center space-x-2">
                                 <img
                                   src={`https://cerbosys.in:4000/${data.product_image.substr(
                                     8
                                   )}`}
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundColor: "grey",
-                                  }}
+                                  className="w-[70px] h-[80px] object-cover rounded-md"
                                 />
+                                <div>
+                                  <span>{data?.product_name}</span>
+                                </div>
                               </div>
-                              <div className="mycart_product_detail">
-                                <div className="text-[18px]">
-                                  {data.product_name}
-                                </div>
-                                <div className="mycart_product_price">
-                                  <span className="text-[15px]">
-                                    Price ₹
-                                    {data.product_price -
-                                      (data.price ? data.price : 0)}
-                                  </span>
-                                </div>
+                              <div>
+                                ₹
+                                {data.product_price -
+                                  (data.price ? data.price : 0)}
                               </div>
                             </div>
-                            {data.designimage == null ? (
-                              ""
-                            ) : (
-                              <div className="mycart_design_div">
-                                <div
-                                  className="cart-plus"
-                                  style={{
-                                    fontSize: "30px",
-                                    fontWeight: "600",
-                                    color: "#808080",
-                                  }}
-                                >
-                                  +
-                                </div>
-                                <div className="mycart-productimagedetail-div">
-                                  <div className="mycart_designimage_div">
-                                    <img
-                                      src={`https://cerbosys.in:4000/${data.designimage.substr(
-                                        8
-                                      )}`}
-                                      style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        borderRadius: "12px",
-                                      }}
-                                    />
-                                    {/* <figcaption style={{margin:"auto", width:"70px"}}>Design</figcaption> */}
-                                  </div>
-                                  <div className="mycart_designdetail_div">
-                                    <div
-                                      style={{
-                                        borderRadius: "5px",
-                                        color: "black",
-                                        fontSize: "15px",
-                                        fontWeight: "500",
-                                        padding: "3px",
-                                      }}
-                                    >
-                                      {data.design_code}
-                                    </div>
-                                    <div
-                                      style={{
-                                        fontSize: "12px",
-                                        marginTop: "10px",
-                                        padding: "3px",
-                                        fontWeight: "500",
-                                      }}
-                                    >
-                                      Rs.{data.price}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            )}
-                            <div className="mycart_totalvalue_div">
-                              <div
-                                style={{ fontSize: "13px", fontWeight: "500" }}
-                              >
-                                {/* {"data.design_price +
-                                data.product_price -
-                                data.offerdiscount"} */}
-                              </div>
-                            </div>
-                            <span
-                              className=" cross_sign cursor-pointer absolute left-auto right-7 "
-                              onClick={() => {
-                                dispatch({
-                                  type: "REMOVE_FROM_CART",
-                                  payload: data.uid,
-                                });
-                                toast(
-                                  `${data.product_name} is removed from your cart ! 😥😥 `,
-                                  {
-                                    position: "top-center",
-                                    autoClose: 3000,
-                                    hideProgressBar: true,
-                                    closeOnClick: true,
-                                    pauseOnHover: false,
-                                    draggable: true,
-                                    progress: undefined,
-                                  }
-                                );
-                              }}
-                              style={{ color: "#808080" }}
-                            >
-                              <ImCross className="" />
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
+                          );
+                        })}
+                        <hr />
+                        <div className="flex justify-between my-4 space-x-2">
+                          <input
+                            type="text"
+                            placeholder="Gift card or discount code"
+                            className="h-12 p-2 rounded-md border-1 border-gray-300"
+                          />
+                          <button className="px-4 bg-slate-400 rounded-lg h-12">
+                            Apply
+                          </button>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between my-4">
+                          <span>Subtotal</span>
+                          <span>Rs.{totalPrice}</span>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between my-4">
+                          <span className="font-bold">Total</span>
+                          <span className="font-bold text-2xl">
+                            Rs {totalPrice}
+                          </span>
+                        </div>
+                      </div>
+                   
                   </div>
                 </div>
-                <br />
+                {/* <br /> */}
                 {/* <h1
                 style={{
                   fontFamily: "Amiri, Serif",
@@ -945,7 +873,7 @@ function TestCart() {
                     *kindly update your shipping details to place an order*
                   </p>
                 )} */}
-                <div className="column is-12 is-clearfix">
+                <div className="column is-12 is-clearfix flex justify-center mb-4">
                   <br />
                   <div className="is-pulled-left ml-5">
                     {true && (
@@ -1032,6 +960,7 @@ function TestCart() {
         ) : (
           <div className="container" style={{ textAlign: "center" }}>
             <div className="title has-text-grey-light">No item in cart!</div>
+
             <ToastContainer
               position="top-center"
               autoClose={2000}
