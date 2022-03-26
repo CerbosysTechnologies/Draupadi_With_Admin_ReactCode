@@ -150,7 +150,7 @@ function TestCart() {
               user_name: res?.data?.shippingDetails.first_name,
             },
           });
-          history.push("/cart");
+        //  history.push("/cart");
           // toast(`Data saved successfully 🤗 `, {
           //   position: "top-center",
           //   autoClose: 3000,
@@ -572,9 +572,9 @@ function TestCart() {
   };
 
   return (
-    <div className="max-w-[1100px] mx-auto px-2    md:!flex  ">
+    <div className="max-w-[1100px] mx-auto px-2   md:!flex  ">
       {/* Address list */}
-      <div className=" flex-grow pr-1 md:border-r-[1px] border-slate-300 mr-9">
+      <div className=" pr-1 md:border-r-[1px] border-slate-300 mr-9 md:w-1/2 ">
         {/* //<h2>&nbsp;</h2> */}
         <p className="mt-2 text-[18px]">Contact Information</p>
         <form onSubmit={(e) => addUpdateAddress(e)} method="POST">
@@ -591,7 +591,9 @@ function TestCart() {
             <span>Email me with news and offers</span>
           </span> */}
           <p className="mt-4 text-[18px]">Shipping Address</p>
+          <div className="flex items-center space-x-1" >
           <input
+          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter First Name"
             type="text"
             placeholder="First Name"
             className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px]"
@@ -599,15 +601,19 @@ function TestCart() {
             onChange={(e) => setFirstname(e.target.value)}
             value={firstname}
           />
+
           <input
+           data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Last Name"
             type="text"
-            placeholder="Last name"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+            placeholder="Last Name"
+            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] "
             required
             value={lastname}
             onChange={(e) => setLastname(e.target.value)}
           />
+          </div>
           <input
+           data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Address"
             type="text"
             placeholder="Address Line 1"
             className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
@@ -624,14 +630,16 @@ function TestCart() {
             value={address2}
           />
           <input
+          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Mobile Number"
             type="number"
-            placeholder="Mobile No."
+            placeholder="Mobile Number"
             className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
             required
             onChange={(e) => setMobile(e.target.value)}
             value={mobile}
           />
           <input
+           data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter City"
             type="text"
             placeholder="City"
             className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
@@ -640,14 +648,16 @@ function TestCart() {
             onChange={(e) => setCity(e.target.value)}
           />
           <input
+          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Postal Code"
             type="number"
-            placeholder="Zip"
+            placeholder="Postal Code"
             className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
             required
             value={zip}
             onChange={(e) => setZip(e.target.value)}
           />
           <input
+          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Select State"
             type="text"
             placeholder="State"
             className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
@@ -678,7 +688,7 @@ function TestCart() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="p-2 bg-[#BA7D82] text-white rounded-md font-bold py-2 my-2 mb-4"
+              className="p-2 bg-black text-white rounded-md font-bold py-2 my-2 mb-4"
             >
               Update Shipping Details
             </button>
@@ -687,22 +697,22 @@ function TestCart() {
       </div>
       <hr />
       {/* Cart part */}
-      <div className="flex-grow  pr-2 p-8">
+      <div className="flex-grow  pr-2 p-8 ">
         {cartitem.length ? (
           <div className="">
             <div className="row">
               <div className="">
-                <div className="container" style={{ minWidth: 150 }}>
+                <div className="container text-black" style={{ minWidth: 150 }}>
                   <Link to="/products" Style="text-decoration: none;">
                     <h2
                       className="title flex w-full items-center mt-2"
                       style={{ color: "#B77304", fontSize: 18 }}
                     >
                       <AiOutlineArrowLeft
-                        style={{ paddingRight: 15, fontSize: 30 }}
+                        style={{ paddingRight: 15, fontSize: 30, color:"black" }}
                       />
-                      <span className="flex-1 text-md block">
-                        Back To Products
+                      <span className="flex-1 text-md block text-black">
+                        Products
                       </span>
                     </h2>
                   </Link>
@@ -718,7 +728,7 @@ function TestCart() {
                       >
                         <strong
                           style={{
-                            color: "grey",
+                            color: "black",
                             fontSize: 15,
                             textAlign: "right",
                           }}
@@ -729,12 +739,12 @@ function TestCart() {
                     </div>
                     <div className="column" style={{ textAlign: "center" }}>
                       <p
-                        className="lead"
+                        className="lead text-black"
                         style={{ color: "green", fontSize: 15 }}
                       >
                         <strong
                           style={{
-                            color: "green",
+                           color:"black",
                             fontSize: 15,
                             textAlign: "right",
                           }}
@@ -879,7 +889,7 @@ function TestCart() {
                     {true && (
                       //<Link to="/paytoOrder">
                       <button
-                        className="p-2 flex items-center bg-[#BA7D82]"
+                        className="p-2 flex items-center bg-black"
                         style={{
                           borderRadius: 5,
                           height: 45,
@@ -915,15 +925,15 @@ function TestCart() {
                           type: "CLEAR_CART",
                           payload: null,
                         });
-                        toast(`Your cart  has been Cleared 😥😥 `, {
-                          position: "top-center",
-                          autoClose: 3000,
-                          hideProgressBar: true,
-                          closeOnClick: true,
-                          pauseOnHover: false,
-                          draggable: true,
-                          progress: undefined,
-                        });
+                        // toast(`Your cart  has been Cleared 😥😥 `, {
+                        //   position: "top-center",
+                        //   autoClose: 3000,
+                        //   hideProgressBar: true,
+                        //   closeOnClick: true,
+                        //   pauseOnHover: false,
+                        //   draggable: true,
+                        //   progress: undefined,
+                        // });
                         // toast("Cart is cleared successfully");
                         // message.success("Cart is cleared successfully");
                       }}
@@ -936,7 +946,7 @@ function TestCart() {
                         color: "white",
                         // marginLeft: 30,
                       }}
-                      className="!ml-9 p-2 flex items-center bg-[#363636] "
+                      className="!ml-9 p-2 flex items-center bg-white text-black border-2 border-black "
                     >
                       <MdDeleteForever size={20} />
                       &nbsp;<span>Clear Cart</span>
@@ -945,7 +955,7 @@ function TestCart() {
                 </div>
               </div>
             </div>
-            <ToastContainer
+            {/* <ToastContainer
               position="top-center"
               autoClose={2000}
               hideProgressBar={false}
@@ -955,13 +965,13 @@ function TestCart() {
               pauseOnFocusLoss
               draggable
               pauseOnHover
-            />
+            /> */}
           </div>
         ) : (
           <div className="container" style={{ textAlign: "center" }}>
             <div className="title has-text-grey-light">No item in cart!</div>
 
-            <ToastContainer
+            {/* <ToastContainer
               position="top-center"
               autoClose={2000}
               hideProgressBar={false}
@@ -971,7 +981,7 @@ function TestCart() {
               pauseOnFocusLoss
               draggable
               pauseOnHover
-            />
+            /> */}
           </div>
         )}
       </div>
