@@ -220,7 +220,7 @@ const NavBar = (props) => {
                     paddingLeft: 20,
                     paddingTop: 20,
 
-                    paddingBottom: 20,
+                    paddingBottom: 8,
                     cursor: "pointer",
                   }}
                 >
@@ -232,8 +232,8 @@ const NavBar = (props) => {
                   style={{
                     // paddingRight: 10,
                     // paddingLeft: 10,
-                    // paddingTop: 15,
-                    paddingBottom: 20,
+                    // paddingTop: 5,
+                    paddingBottom: 8,
                     cursor: "pointer",
                   }}
                 >
@@ -269,7 +269,7 @@ const NavBar = (props) => {
                   // paddingRight: 10,
                   // paddingLeft: 10,
                   // paddingTop: 20,
-                  paddingBottom: 20,
+                  paddingBottom: -10,
                   cursor: "pointer",
                 }}
               >
@@ -286,7 +286,7 @@ const NavBar = (props) => {
                   // paddingRight: 10,
                   // paddingLeft: 10,
                   // paddingTop: 20,
-                  paddingBottom: 20,
+                  paddingBottom: 8,
                   cursor: "pointer",
                   fontSize: 20,
                 }}
