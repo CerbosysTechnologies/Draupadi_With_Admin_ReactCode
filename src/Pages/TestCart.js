@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Form, Col, Table } from "react-bootstrap";
+// import { Row, Form, Col, Table } from "react-bootstrap";
 import axios from "axios";
 //import authHeaderuser from "../../services/auth-headers";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
@@ -12,7 +12,7 @@ import { Refresh } from "styled-icons/boxicons-regular";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-
+import { Form } from "antd";
 import { FaShoppingCart } from "react-icons/fa";
 
 import "./cart.css";
@@ -36,6 +36,7 @@ import { MdDeleteForever } from "react-icons/md";
 import "./shippingAddress.css";
 
 function TestCart() {
+  const [form] = Form.useForm();
   const dispatch = useDispatch();
   const history = useHistory();
   const [update, setUpdate] = useState(false);
@@ -93,102 +94,7 @@ function TestCart() {
     }
   }
 
-  const addUpdateAddress = async (e) => {
-    e.preventDefault();
-    await axios
-      .post(
-        "https://cerbosys.in:4000/draupadi/userLoginWT",
-        // ` ${
-        //   update
-        //     ? "https://cerbosys.in:4000/draupadi/updateShippingAddress"
-        //     : "https://cerbosys.in:4000/draupadi/insertShippingAddress"
-        // } `
-
-        {
-          user_name: email,
-          // shipping_id: user?.shippingDetails?.shipping_id,
-          // user_id: user?.userId,
-          first_name: firstname,
-          last_name: lastname,
-          address_line1: address1,
-          address_line2: address2,
-          landmark: landmark,
-          state_name: state,
-          city: city,
-          postalcode: zip,
-          mobilenumber: mobile,
-          address_type: addresstype,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user?.token}`,
-          },
-        }
-      )
-      .then((res) => {
-        console.log("new user entry", res, res?.data);
-        if (res.data.status == 200) {
-          setEmail("");
-          setFirstname("");
-          setLastname("");
-          setAddress1("");
-          setAddress2("");
-          setMobile("");
-          setCity("");
-          setZip("");
-          setState("");
-          setLandmark("");
-          setAddresstype("");
-          dispatch({
-            type: "LOGIN_USER",
-            payload: {
-              shippingDetails: res?.data?.shippingDetails,
-              token: res?.data?.token,
-              userId: res?.data?.userId,
-              user_email: res?.data?.user,
-              user_name: res?.data?.shippingDetails.first_name,
-            },
-          });
-        //  history.push("/cart");
-          // toast(`Data saved successfully 🤗 `, {
-          //   position: "top-center",
-          //   autoClose: 3000,
-          //   hideProgressBar: true,
-          //   closeOnClick: true,
-          //   pauseOnHover: false,
-          //   draggable: true,
-          //   progress: undefined,
-          // });
-        }
-
-        if (res.data.status == 400) {
-          //history.push("/login");
-          console.log(res);
-          toast.error(`You are already a registered member , please login `, {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-          });
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(`Something went wrong `, {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-        });
-      });
-  };
+ 
 
   const [modeOfPayment, setModeOfPayment] = useState("online");
   const [loading, setLoading] = useState(false);
@@ -298,7 +204,7 @@ function TestCart() {
           totalAmount: totalPrice,
           discount: totalDiscount,
           payableAmount: totalPrice,
-          shipping_id: user.shippingDetails.shipping_id,
+          shipping_id: user?.shippingDetails?.shipping_id,
           status: "Pending", // for online payment
           payment_type: "Online",
           order_date: moment(moment.now()).format("YYYY-MM-DD"), // "2022-03-09", // moment(moment.now()).format("YYYY-MM-DD")
@@ -571,116 +477,384 @@ function TestCart() {
       });
   };
 
+  const addUpdateAddress = async (e) => {
+    //e.preventDefault();
+    await axios
+      .post(
+        "https://cerbosys.in:4000/draupadi/userLoginWT",
+        // ` ${
+        //   update
+        //     ? "https://cerbosys.in:4000/draupadi/updateShippingAddress"
+        //     : "https://cerbosys.in:4000/draupadi/insertShippingAddress"
+        // } `
+
+        {
+          user_name: email,
+          // shipping_id: user?.shippingDetails?.shipping_id,
+          // user_id: user?.userId,
+          first_name: firstname,
+          last_name: lastname,
+          address_line1: address1,
+          address_line2: address2,
+          landmark: landmark,
+          state_name: state,
+          city: city,
+          postalcode: zip,
+          mobilenumber: mobile,
+          address_type: addresstype,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user?.token}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log("new user entry", res, res?.data);
+        if (res.data.status == 200) {
+          setEmail("");
+          setFirstname("");
+          setLastname("");
+          setAddress1("");
+          setAddress2("");
+          setMobile("");
+          setCity("");
+          setZip("");
+          setState("");
+          setLandmark("");
+          setAddresstype("");
+          dispatch({
+            type: "LOGIN_USER",
+            payload: {
+              shippingDetails: res?.data?.shippingDetails,
+              token: res?.data?.token,
+              userId: res?.data?.userId,
+              user_email: res?.data?.user,
+              user_name: res?.data?.shippingDetails.first_name,
+            },
+          });
+
+
+          onlineProceedToCheckOut()
+          //  history.push("/cart");
+          // toast(`Data saved successfully 🤗 `, {
+          //   position: "top-center",
+          //   autoClose: 3000,
+          //   hideProgressBar: true,
+          //   closeOnClick: true,
+          //   pauseOnHover: false,
+          //   draggable: true,
+          //   progress: undefined,
+          // });
+        }
+
+        if (res.data.status == 400) {
+          //history.push("/login");
+          console.log(res);
+          toast.error(`You are already a registered member , please login `, {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(`Something went wrong `, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      });
+  };
+
   return (
     <div className="max-w-[1100px] mx-auto px-2   md:!flex  ">
       {/* Address list */}
       <div className=" pr-1 md:border-r-[1px] border-slate-300 mr-9 md:w-1/2 ">
         {/* //<h2>&nbsp;</h2> */}
         <p className="mt-2 text-[18px]">Contact Information</p>
-        <form onSubmit={(e) => addUpdateAddress(e)} method="POST">
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px]"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
+        {/* <form onSubmit={(e) => addUpdateAddress(e)} method="POST"> */}
+        <Form
+          name="basic"
+          onFinish={addUpdateAddress}
+          //onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            name="user_name"
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: "Please input a valid Email!",
+              },
+            ]}
+          >
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px]"
+              // required
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              autoFocus
+            />
+          </Form.Item>
           {/* <span className="flex  space-x-2">
             <input type="checkbox" className="checked:bg-red-700 " />
             <span>Email me with news and offers</span>
           </span> */}
           <p className="mt-4 text-[18px]">Shipping Address</p>
-          <div className="flex items-center space-x-1" >
-          <input
-          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter First Name"
-            type="text"
-            placeholder="First Name"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px]"
-            required
-            onChange={(e) => setFirstname(e.target.value)}
-            value={firstname}
-          />
+          <div className="flex items-center space-x-1">
+            <Form.Item
+              name="first_name"
+              rules={[
+                {
+                  required: true,
+                  //  type:"first_name",
+                  message: "Please Enter First Name!",
+                },
+              ]}
+            >
+              <input
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Please Enter First Name"
+                type="text"
+                placeholder="First Name"
+                className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px]"
+                // required
+                onChange={(e) => setFirstname(e.target.value)}
+                value={firstname}
+              />
+            </Form.Item>
 
-          <input
-           data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Last Name"
-            type="text"
-            placeholder="Last Name"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] "
-            required
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-          />
+            <Form.Item
+              name="last_name"
+              rules={[
+                {
+                  required: true,
+                  //  type:"first_name",
+                  message: "Please Enter Last Name!",
+                },
+              ]}
+            >
+              <input
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Please Enter Last Name"
+                type="text"
+                placeholder="Last Name"
+                className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] "
+                // required
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+              />
+            </Form.Item>
           </div>
-          <input
-           data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Address"
-            type="text"
-            placeholder="Address Line 1"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            onChange={(e) => setAddress1(e.target.value)}
-            value={address1}
-          />
-          <input
-            type="text"
-            placeholder="Address Line 2"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            onChange={(e) => setAddress2(e.target.value)}
-            value={address2}
-          />
-          <input
-          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Mobile Number"
-            type="number"
-            placeholder="Mobile Number"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            onChange={(e) => setMobile(e.target.value)}
-            value={mobile}
-          />
-          <input
-           data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter City"
-            type="text"
-            placeholder="City"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <input
-          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Enter Postal Code"
-            type="number"
-            placeholder="Postal Code"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            value={zip}
-            onChange={(e) => setZip(e.target.value)}
-          />
-          <input
-          data-bs-toggle="tooltip" data-bs-placement="top" title="Please Select State"
-            type="text"
-            placeholder="State"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Land Mark"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            value={landmark}
-            onChange={(e) => setLandmark(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Address Type"
-            className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
-            required
-            value={addresstype}
-            onChange={(e) => setAddresstype(e.target.value)}
-          />
+          <Form.Item
+            name="address_line1"
+            rules={[
+              {
+                required: true,
+                //  type:"first_name",
+                message: "Please Enter Address line 1!",
+              },
+            ]}
+          >
+            <input
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Please Enter Address"
+              type="text"
+              placeholder="Address Line 1"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              onChange={(e) => setAddress1(e.target.value)}
+              value={address1}
+            />
+          </Form.Item>
+          <Form.Item
+            name="address_line2"
+            rules={[
+              {
+                required: true,
+                //  type:"first_name",
+                message: "Please Enter Address Line 2!",
+              },
+            ]}
+          >
+            <input
+              type="text"
+              placeholder="Address Line 2"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              onChange={(e) => setAddress2(e.target.value)}
+              value={address2}
+            />
+          </Form.Item>
+          <Form.Item
+            name="mobilenumber"
+            rules={[
+              {
+                required: true,
+
+                message: "Please Enter Mobile Number!",
+              },
+              {
+                max: 10,
+
+                message: "Please Enter valid Mobile Number!",
+              },
+            ]}
+          >
+            <input
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Please Enter Mobile Number"
+              type="number"
+              placeholder="Mobile Number"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              onChange={(e) => setMobile(e.target.value)}
+              value={mobile}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="city"
+            rules={[
+              {
+                required: true,
+
+                message: "Please Enter City Name!",
+              },
+              {
+                max: 20,
+
+                message: "Please Enter City Name!",
+              },
+            ]}
+          >
+            <input
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Please Enter City"
+              type="text"
+              placeholder="City"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="postalcode"
+            rules={[
+              {
+                required: true,
+
+                message: "Please Enter Postal Code!",
+              },
+              {
+                max: 6,
+
+                message: "Please Enter valid Postal Code!",
+              },
+            ]}
+          >
+            <input
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Please Enter Postal Code"
+              type="number"
+              placeholder="Postal Code"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              value={zip}
+              onChange={(e) => setZip(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item
+            name="state_name"
+            rules={[
+              {
+                required: true,
+                // min:10,
+                // max:10,
+                //  type:"first_name",
+                message: "Please Enter State Name!",
+              },
+            ]}
+          >
+            <input
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Please Select State"
+              type="text"
+              placeholder="State"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="landmark"
+            rules={[
+              {
+                required: true,
+                // min:10,
+                // max:10,
+                //  type:"first_name",
+                message: "Please Enter a Landmark near you!",
+              },
+            ]}
+          >
+            <input
+              type="text"
+              placeholder="Land Mark"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              value={landmark}
+              onChange={(e) => setLandmark(e.target.value)}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="address_type"
+            rules={[
+              {
+                required: true,
+                // min:10,
+                // max:10,
+                //  type:"first_name",
+                message: "Please Enter your Address type!",
+              },
+            ]}
+          >
+            <input
+              type="text"
+              placeholder="Address Type"
+              className="w-full h-[45px] p-2 rounded-md outline-red-800 border-[1.5px] mt-[8px]"
+              // required
+              value={addresstype}
+              onChange={(e) => setAddresstype(e.target.value)}
+            />
+          </Form.Item>
+
           {/* <span className="flex  space-x-2">
             <input type="checkbox" className="checked:bg-red-700 " />
             <span>Save this information for next time</span>
@@ -693,7 +867,8 @@ function TestCart() {
               Update Shipping Details
             </button>
           </div>
-        </form>
+        </Form>
+        {/* </form> */}
       </div>
       <hr />
       {/* Cart part */}
@@ -709,7 +884,11 @@ function TestCart() {
                       style={{ color: "#B77304", fontSize: 18 }}
                     >
                       <AiOutlineArrowLeft
-                        style={{ paddingRight: 15, fontSize: 30, color:"black" }}
+                        style={{
+                          paddingRight: 15,
+                          fontSize: 30,
+                          color: "black",
+                        }}
                       />
                       <span className="flex-1 text-md block text-black">
                         Products
@@ -744,7 +923,7 @@ function TestCart() {
                       >
                         <strong
                           style={{
-                           color:"black",
+                            color: "black",
                             fontSize: 15,
                             textAlign: "right",
                           }}
@@ -759,7 +938,7 @@ function TestCart() {
                 <div className="">
                   <div className="">
                     {/* <div className="column"> */}
-                      {/* {cartKeys.map(key => (
+                    {/* {cartKeys.map(key => (
               <CartItem
                 cartKey={key}
                 key={key} 
@@ -768,30 +947,30 @@ function TestCart() {
               />
             ))} */}
 
-                      <div className="flex-col max-w-[550px] mx-auto">
-                        {cartitem.map((data) => {
-                          return (
-                            <div className="flex items-center justify-between my-2">
-                              <div className="flex items-center space-x-2">
-                                <img
-                                  src={`https://cerbosys.in:4000/${data.product_image.substr(
-                                    8
-                                  )}`}
-                                  className="w-[60px] h-[70px] object-cover rounded-md"
-                                />
-                                <div>
-                                  <span>{data?.product_name}</span>
-                                </div>
-                              </div>
+                    <div className="flex-col max-w-[550px] mx-auto">
+                      {cartitem.map((data) => {
+                        return (
+                          <div className="flex items-center justify-between my-2">
+                            <div className="flex items-center space-x-2">
+                              <img
+                                src={`https://cerbosys.in:4000/${data.product_image.substr(
+                                  8
+                                )}`}
+                                className="w-[60px] h-[70px] object-cover rounded-md"
+                              />
                               <div>
-                                ₹
-                                {data.product_price -
-                                  (data.price ? data.price : 0)}
+                                <span>{data?.product_name}</span>
                               </div>
                             </div>
-                          );
-                        })}
-                        {/* <hr />
+                            <div>
+                              ₹
+                              {data.product_price -
+                                (data.price ? data.price : 0)}
+                            </div>
+                          </div>
+                        );
+                      })}
+                      {/* <hr />
                         <div className="flex justify-between my-4 space-x-2">
                           <input
                             type="text"
@@ -802,20 +981,19 @@ function TestCart() {
                             Apply
                           </button>
                         </div> */}
-                        <hr />
-                        <div className="flex justify-between my-2">
-                          <span>Subtotal</span>
-                          <span>Rs.{totalPrice}</span>
-                        </div>
-                        <hr />
-                        <div className="flex justify-between my-2">
-                          <span className="font-bold">Total</span>
-                          <span className="font-bold text-2xl">
-                            Rs {totalPrice}
-                          </span>
-                        </div>
+                      <hr />
+                      <div className="flex justify-between my-2">
+                        <span>Subtotal</span>
+                        <span>Rs.{totalPrice}</span>
                       </div>
-                   
+                      <hr />
+                      <div className="flex justify-between my-2">
+                        <span className="font-bold">Total</span>
+                        <span className="font-bold text-2xl">
+                          Rs {totalPrice}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 {/* <br /> */}

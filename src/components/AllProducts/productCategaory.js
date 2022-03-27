@@ -573,18 +573,18 @@ const Pcategory = (props) => {
 
                         setpromoCodeError("");
 
-                        toast(
-                          `${product.product_name} is added to your cart !   😍😍 `,
-                          {
-                            position: "top-center",
-                            autoClose: 3000,
-                            hideProgressBar: true,
-                            closeOnClick: true,
-                            pauseOnHover: false,
-                            draggable: true,
-                            progress: undefined,
-                          }
-                        );
+                        // toast(
+                        //   `${product.product_name} is added to your cart !   😍😍 `,
+                        //   {
+                        //     position: "top-center",
+                        //     autoClose: 3000,
+                        //     hideProgressBar: true,
+                        //     closeOnClick: true,
+                        //     pauseOnHover: false,
+                        //     draggable: true,
+                        //     progress: undefined,
+                        //   }
+                        // );
                         // }
 
                         // else {
@@ -632,18 +632,18 @@ const Pcategory = (props) => {
                               type: "REMOVE_FROM_WISHLIST",
                               payload: product.product_id,
                             });
-                            toast(
-                              `${product.product_name} is removed from your wishlist !   😯😯 `,
-                              {
-                                position: "top-center",
-                                autoClose: 3000,
-                                hideProgressBar: true,
-                                closeOnClick: true,
-                                pauseOnHover: false,
-                                draggable: true,
-                                progress: undefined,
-                              }
-                            );
+                            // toast(
+                            //   `${product.product_name} is removed from your wishlist !   😯😯 `,
+                            //   {
+                            //     position: "top-center",
+                            //     autoClose: 3000,
+                            //     hideProgressBar: true,
+                            //     closeOnClick: true,
+                            //     pauseOnHover: false,
+                            //     draggable: true,
+                            //     progress: undefined,
+                            //   }
+                            // );
                           }}
                           className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 inline p-1 rounded-md text-white w-[185px]  " style={{border:"3px solid black"}}
                         >
@@ -669,31 +669,31 @@ const Pcategory = (props) => {
                                 type: "ADD_TO_WISHLIST",
                                 payload: product,
                               });
-                              toast(
-                                `${product.product_name} is added to your wishlist !   ❤🧡 `,
-                                {
-                                  position: "top-center",
-                                  autoClose: 3000,
-                                  hideProgressBar: true,
-                                  closeOnClick: true,
-                                  pauseOnHover: false,
-                                  draggable: true,
-                                  progress: undefined,
-                                }
-                              );
+                              // toast(
+                              //   `${product.product_name} is added to your wishlist !   ❤🧡 `,
+                              //   {
+                              //     position: "top-center",
+                              //     autoClose: 3000,
+                              //     hideProgressBar: true,
+                              //     closeOnClick: true,
+                              //     pauseOnHover: false,
+                              //     draggable: true,
+                              //     progress: undefined,
+                              //   }
+                              // );
                             } else {
-                              toast.error(
-                                `You should login first to perform this action 😥😥 `,
-                                {
-                                  position: "top-center",
-                                  autoClose: 5000,
-                                  hideProgressBar: true,
-                                  closeOnClick: true,
-                                  pauseOnHover: false,
-                                  draggable: true,
-                                  progress: undefined,
-                                }
-                              );
+                              // toast.error(
+                              //   `You should login first to perform this action 😥😥 `,
+                              //   {
+                              //     position: "top-center",
+                              //     autoClose: 5000,
+                              //     hideProgressBar: true,
+                              //     closeOnClick: true,
+                              //     pauseOnHover: false,
+                              //     draggable: true,
+                              //     progress: undefined,
+                              //   }
+                              // );
                             }
                           }}
                       className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 p-1 rounded-md text-white w-[185px]" style={{border:"3px solid black"}}

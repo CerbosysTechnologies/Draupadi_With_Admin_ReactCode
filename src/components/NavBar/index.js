@@ -244,6 +244,7 @@ const NavBar = (props) => {
                       fontFamily: "Amiri,serif",
                       fontStyle: "normal",
                       texTransform: "capitalize",
+                      padding:"5"
                     }}
                   >
                     {userToken ? (
@@ -272,7 +273,7 @@ const NavBar = (props) => {
                   cursor: "pointer",
                 }}
               >
-                <AiOutlineSearch size={20} />
+                <AiOutlineSearch size={20} className="mr-3" />
               </li>
               <li
                 onClick={() => {

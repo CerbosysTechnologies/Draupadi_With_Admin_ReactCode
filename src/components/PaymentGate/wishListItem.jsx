@@ -164,18 +164,18 @@ export default function WishList() {
                                         type: "REMOVE_FROM_WISHLIST",
                                         payload: product.product_id,
                                       });
-                                      toast(
-                                        `${product.product_name} is added to your cart ! 🥰🥰 `,
-                                        {
-                                          position: "top-center",
-                                          autoClose: 3000,
-                                          hideProgressBar: true,
-                                          closeOnClick: true,
-                                          pauseOnHover: false,
-                                          draggable: true,
-                                          progress: undefined,
-                                        }
-                                      );
+                                      // toast(
+                                      //   `${product.product_name} is added to your cart ! 🥰🥰 `,
+                                      //   {
+                                      //     position: "top-center",
+                                      //     autoClose: 3000,
+                                      //     hideProgressBar: true,
+                                      //     closeOnClick: true,
+                                      //     pauseOnHover: false,
+                                      //     draggable: true,
+                                      //     progress: undefined,
+                                      //   }
+                                      // );
                                     }}
                                   >
                                     Move to cart
@@ -189,18 +189,18 @@ export default function WishList() {
                                       payload: product.product_id,
                                     });
 
-                                    toast(
-                                      `${product.product_name} is removed from your wishlist ! 😥😥 `,
-                                      {
-                                        position: "top-center",
-                                        autoClose: 3000,
-                                        hideProgressBar: true,
-                                        closeOnClick: true,
-                                        pauseOnHover: false,
-                                        draggable: true,
-                                        progress: undefined,
-                                      }
-                                    );
+                                    // toast(
+                                    //   `${product.product_name} is removed from your wishlist ! 😥😥 `,
+                                    //   {
+                                    //     position: "top-center",
+                                    //     autoClose: 3000,
+                                    //     hideProgressBar: true,
+                                    //     closeOnClick: true,
+                                    //     pauseOnHover: false,
+                                    //     draggable: true,
+                                    //     progress: undefined,
+                                    //   }
+                                    // );
                                   }}
                                 >
                                   <span className="delete is-large"></span>
@@ -217,7 +217,7 @@ export default function WishList() {
             </tr>
           </Table>
         </div>
-        <ToastContainer
+        {/* <ToastContainer
           position="top-center"
           autoClose={2000}
           hideProgressBar={false}
@@ -227,7 +227,7 @@ export default function WishList() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-        />
+        /> */}
       </div>
     </>
   );

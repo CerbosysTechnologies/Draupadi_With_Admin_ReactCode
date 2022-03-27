@@ -1,0 +1,115 @@
+// <div className="mycart_div relative ">
+                          //   <div className="mycart-productimagedetail-div">
+                          //     <div className="mycart_productimage_div">
+                          //       <img
+                          //         src={`https://cerbosys.in:4000/${data.product_image.substr(
+                          //           8
+                          //         )}`}
+                          //         style={{
+                          //           width: "100%",
+                          //           height: "100%",
+                          //           backgroundColor: "grey",
+                          //         }}
+                          //       />
+                          //     </div>
+                          //     <div className="mycart_product_detail">
+                          //       <div className="text-[18px]">
+                          //         {data.product_name}
+                          //       </div>
+                          //       <div className="mycart_product_price">
+                          //         <span className="text-[15px]">
+                          //           Price ₹
+                          //           {data.product_price -
+                          //             (data.price ? data.price : 0)}
+                          //         </span>
+                          //       </div>
+                          //     </div>
+                          //   </div>
+                          //   {data.designimage == null ? (
+                          //     ""
+                          //   ) : (
+                          //     <div className="mycart_design_div">
+                          //       <div
+                          //         className="cart-plus"
+                          //         style={{
+                          //           fontSize: "30px",
+                          //           fontWeight: "600",
+                          //           color: "#808080",
+                          //         }}
+                          //       >
+                          //         +
+                          //       </div>
+                          //       <div className="mycart-productimagedetail-div">
+                          //         <div className="mycart_designimage_div">
+                          //           <img
+                          //             src={`https://cerbosys.in:4000/${data.designimage.substr(
+                          //               8
+                          //             )}`}
+                          //             style={{
+                          //               width: "100%",
+                          //               height: "100%",
+                          //               borderRadius: "12px",
+                          //             }}
+                          //           />
+                          //           {/* <figcaption style={{margin:"auto", width:"70px"}}>Design</figcaption> */}
+                          //         </div>
+                          //         <div className="mycart_designdetail_div">
+                          //           <div
+                          //             style={{
+                          //               borderRadius: "5px",
+                          //               color: "black",
+                          //               fontSize: "15px",
+                          //               fontWeight: "500",
+                          //               padding: "3px",
+                          //             }}
+                          //           >
+                          //             {data.design_code}
+                          //           </div>
+                          //           <div
+                          //             style={{
+                          //               fontSize: "12px",
+                          //               marginTop: "10px",
+                          //               padding: "3px",
+                          //               fontWeight: "500",
+                          //             }}
+                          //           >
+                          //             Rs.{data.price}
+                          //           </div>
+                          //         </div>
+                          //       </div>
+                          //     </div>
+                          //   )}
+                          //   <div className="mycart_totalvalue_div">
+                          //     <div
+                          //       style={{ fontSize: "13px", fontWeight: "500" }}
+                          //     >
+                          //       {/* {"data.design_price +
+                          //       data.product_price -
+                          //       data.offerdiscount"} */}
+                          //     </div>
+                          //   </div>
+                          //   <span
+                          //     className=" cross_sign cursor-pointer absolute left-auto right-7 "
+                          //     onClick={() => {
+                          //       dispatch({
+                          //         type: "REMOVE_FROM_CART",
+                          //         payload: data.uid,
+                          //       });
+                          //       toast(
+                          //         `${data.product_name} is removed from your cart ! 😥😥 `,
+                          //         {
+                          //           position: "top-center",
+                          //           autoClose: 3000,
+                          //           hideProgressBar: true,
+                          //           closeOnClick: true,
+                          //           pauseOnHover: false,
+                          //           draggable: true,
+                          //           progress: undefined,
+                          //         }
+                          //       );
+                          //     }}
+                          //     style={{ color: "#808080" }}
+                          //   >
+                          //     <ImCross className="" />
+                          //   </span>
+                          // </div>
