@@ -580,9 +580,9 @@ function TestCart() {
   return (
     <div className="max-w-[1100px] mx-auto px-2   md:!flex  ">
       {/* Address list */}
-      <div className=" pr-1 md:border-r-[1px] border-slate-300 mr-9 md:w-1/2 ">
+      <div className=" pr-4 md:border-r-[1px] border-slate-300 mr-9 md:w-1/2 ">
         {/* //<h2>&nbsp;</h2> */}
-        <p className="mt-2 text-[18px]">Contact Information</p>
+        <p className="mt-2 text-[18px]  flex justify-between"><span>Contact Information</span>   <span><span className=" text-[14px] ">Already have an account?</span>   <span onClick={()=> history.push("/login")} className=" text-red-500 text-[14px] cursor-pointer ">Log in</span>      </span>                                                </p>
         {/* <form onSubmit={(e) => addUpdateAddress(e)} method="POST"> */}
         <Form
           name="basic"
@@ -897,9 +897,9 @@ function TestCart() {
                   </Link>
                 </div>
               </div>
-              <div className="">
-                <div className="container">
-                  <div className="row">
+              <div className="md:!w-[400px]">
+                <div className="container ">
+                  <div className="row ">
                     <div className="column" style={{ textAlign: "center" }}>
                       <p
                         className="lead"
