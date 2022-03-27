@@ -94,8 +94,6 @@ function TestCart() {
     }
   }
 
- 
-
   const [modeOfPayment, setModeOfPayment] = useState("online");
   const [loading, setLoading] = useState(false);
   const [wareIQproducts, setwareIQproducts] = useState("");
@@ -219,6 +217,7 @@ function TestCart() {
       )
       .then((res) => {
         console.log("-------order id generating", res.data);
+        // console.log("-------order id generating", res.data);
         setLoading(false);
         //--------------------------------------------------------------------------------------------------------------------------
         if (res.data.status == 200) {
@@ -535,8 +534,14 @@ function TestCart() {
             },
           });
 
+          if (modeOfPayment == "online") {
+            // displayRazorpay();
+            onlineProceedToCheckOut();
+          } else if (modeOfPayment == "cash") {
+            // displayRazorpay();
+            offlineProceedToCheckOut();
+          }
 
-          onlineProceedToCheckOut()
           //  history.push("/cart");
           // toast(`Data saved successfully 🤗 `, {
           //   position: "top-center",
@@ -582,7 +587,18 @@ function TestCart() {
       {/* Address list */}
       <div className=" pr-4 md:border-r-[1px] border-slate-300 mr-9 md:w-1/2 ">
         {/* //<h2>&nbsp;</h2> */}
-        <p className="mt-2 text-[18px]  flex justify-between"><span>Contact Information</span>   <span><span className=" text-[14px] ">Already have an account?</span>   <span onClick={()=> history.push("/login")} className=" text-red-500 text-[14px] cursor-pointer ">Log in</span>      </span>                                                </p>
+        <p className="mt-2 text-[18px]  flex justify-between">
+          <span>Contact Information</span>{" "}
+          <span>
+            <span className=" text-[14px] ">Already have an account?</span>{" "}
+            <span
+              onClick={() => history.push("/login")}
+              className=" text-red-500 text-[14px] cursor-pointer "
+            >
+              Log in
+            </span>{" "}
+          </span>{" "}
+        </p>
         {/* <form onSubmit={(e) => addUpdateAddress(e)} method="POST"> */}
         <Form
           name="basic"
@@ -863,8 +879,9 @@ function TestCart() {
             <button
               type="submit"
               className="p-2 bg-black text-white rounded-md font-bold py-2 my-2 mb-4"
+              disabled={loading}
             >
-              Update Shipping Details
+              Continue to Shipping
             </button>
           </div>
         </Form>
@@ -1063,7 +1080,7 @@ function TestCart() {
                 )} */}
                 <div className="column is-12 is-clearfix flex justify-center mb-4">
                   <br />
-                  <div className="is-pulled-left ml-5">
+                  {/* <div className="is-pulled-left ml-5">
                     {true && (
                       //<Link to="/paytoOrder">
                       <button
@@ -1095,7 +1112,7 @@ function TestCart() {
                       </button>
                       // </Link>
                     )}
-                  </div>
+                  </div> */}
                   <div className="is-pulled flex">
                     <button
                       onClick={() => {
