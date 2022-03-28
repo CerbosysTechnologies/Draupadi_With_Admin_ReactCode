@@ -720,7 +720,7 @@ const Cart = (props) => {
         <div className="container">
           <div className="row">
             <div className="col col-lg-3">
-              <div className="container" style={{ minWidth: 150 }}>
+              {/* <div className="container" style={{ minWidth: 180 }}>
                 <Link to="/products" Style="text-decoration: none;">
                   <h2
                     className="title"
@@ -729,10 +729,29 @@ const Cart = (props) => {
                     <AiOutlineArrowLeft
                       style={{ paddingRight: 15, fontSize: 45 }}
                     />
-                    Back To Products
+                    <span class="flex-1 text-md block text-black">Products</span>
                   </h2>
                 </Link>
-              </div>
+              </div> */}
+              <div className="container text-black" style={{ minWidth: 150 }}>
+                  <Link to="/products" Style="text-decoration: none;">
+                    <h2
+                      className="title flex w-full items-center mt-2"
+                      style={{ color: "#B77304", fontSize: 18 }}
+                    >
+                      <AiOutlineArrowLeft
+                        style={{
+                          paddingRight: 15,
+                          fontSize: 30,
+                          color: "black",
+                        }}
+                      />
+                      <span className="flex-1 text-md block text-black">
+                        Products
+                      </span>
+                    </h2>
+                  </Link>
+                </div>
             </div>
             <div className="col">
               <div className="container">
@@ -892,7 +911,7 @@ const Cart = (props) => {
                               //   }
                               // );
                             }}
-                            style={{ color: "#808080" }}
+                            style={{ color: "#808080"}}
                           >
                             <ImCross />
                           </span>
@@ -917,7 +936,10 @@ const Cart = (props) => {
 
               <div>
                 <div className="container">
-                  <h3 style={{fontSize: "18px", fontWeight:"700", borderBottom: "2px solid #00000080", display: "inline", paddingBottom: -5}}>Your Shipping Address:</h3>
+                  <h3 style={{fontSize: "18px", fontWeight:"700", 
+                  borderBottom: "2px solid #00000080", display: "inline", 
+                  paddingBottom: -5, WebkitPaddingAfter:5}}>
+                    Your Shipping Address:</h3>
                   {user.shippingDetails ? (
                     <div>
                       <br></br>
@@ -991,7 +1013,7 @@ const Cart = (props) => {
                         height: 45,
                         fontSize: 15,
                         fontWeight: "bold",
-                        backgroundColor: "#BA7D82",
+                        backgroundColor: "black",
                         color: "white",
                       }}
                       onClick={() => {

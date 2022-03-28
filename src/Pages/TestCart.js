@@ -724,12 +724,10 @@ function TestCart() {
             rules={[
               {
                 required: true,
-
                 message: "Please Enter Mobile Number!",
               },
               {
                 max: 10,
-
                 message: "Please Enter valid Mobile Number!",
               },
             ]}
@@ -752,7 +750,6 @@ function TestCart() {
             rules={[
               {
                 required: true,
-
                 message: "Please Enter City Name!",
               },
               {

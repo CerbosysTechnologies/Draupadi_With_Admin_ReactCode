@@ -62,9 +62,9 @@
     background-color: rgba(255,255,250, .1);
     color: black;
     border-radius: 8px;
-    padding-left: 6px;
+    padding-left: 0px;
     position: absolute;
-    right: 16%;
+    right: 10%;
 }
 
 @media (min-width:300px) and (max-width:374px){
@@ -194,8 +194,9 @@
     }
 
     .mycart_cross {
-        right: 30%;
-        bottom: 85%;
+
+        right: 11%;
+        bottom: 70%;
     }
     .mycart_productimage_div {
         margin-left: 15px;
@@ -330,7 +331,7 @@
         }
         .mycart_cross {
             right: 290px;
-            margin-right: -141px;
+            margin-right: -240px;
             margin-top: 10px;
            
         }
