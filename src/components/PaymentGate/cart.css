@@ -144,10 +144,11 @@
         width: 290px;
     }
 
-    .mycart_cross {
-        right: 15vw;
+    .mycart_cross{
+        /* right: 15vw; */
         margin-top: -153px;
         margin-right: -15px;
+        
     }
     .mycart_productimage_div {
         margin-left: 15px;
