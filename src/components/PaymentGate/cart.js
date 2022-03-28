@@ -948,18 +948,18 @@ const Cart = (props) => {
                       {user.shippingDetails.last_name + " "}
                     </p> </b>
 
-                    <p style={{marginTop: -15}}>
+                    <p style={{marginTop: 15}}>
                       {user.shippingDetails.address_line1 + " "}
                       {user.shippingDetails.address_line2 + " "}
                     </p>
 
-                    <p style={{marginTop: -15}}>
+                    <p style={{marginTop: 15}}>
                       {user.shippingDetails.city}, &nbsp;
                       {user.shippingDetails.state_name}, &nbsp;
                       {user.shippingDetails.postalcode}
                     </p>
 
-                    <b> <p style={{marginTop: -15}}>
+                    <b> <p style={{marginTop: 15}}>
                       {user.shippingDetails.mobilenumber}
                     </p> </b>
                     </div>

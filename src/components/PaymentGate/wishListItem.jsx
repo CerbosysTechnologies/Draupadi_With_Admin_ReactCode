@@ -6,6 +6,7 @@ import axios from "axios";
 import authHeaderuser from "../../services/auth-headers";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/index";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { InputGroup, Form, FormControl, Button, Table } from "react-bootstrap";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
@@ -78,7 +79,7 @@ export default function WishList() {
           Style="border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#BA7D82;"
         >
           <div className="hero-body container">
-            <h4 className="title" style={{fontSize: "25px"}}>My WishList</h4>
+            <h4 className="title" style={{fontSize: "18px"}}>My WishList</h4>
           </div>
         </div>
         <br />
@@ -86,7 +87,7 @@ export default function WishList() {
           <Table Style="border: none;">
             <tr Style="border: none;">
               <td Style="border: none;">
-                <div className="container" style={{ minWidth: 100 }}>
+                {/* <div className="container" style={{ minWidth: 100 }}>
                   <Link Style="text-decoration: none;" to="/products">
                     <h2
                       className="title"
@@ -94,6 +95,25 @@ export default function WishList() {
                     >
                       <FaLongArrowAltLeft />
                       Back to Products
+                    </h2>
+                  </Link>
+                </div> */}
+                <div className="container text-black" style={{ minWidth: 150 }}>
+                  <Link to="/products" Style="text-decoration: none;">
+                    <h2
+                      className="title flex w-full items-center mt-2"
+                      style={{ color: "#B77304", fontSize: 18 }}
+                    >
+                      <AiOutlineArrowLeft
+                        style={{
+                          paddingRight: 15,
+                          fontSize: 30,
+                          color: "black",
+                        }}
+                      />
+                      <span className="flex-1 text-md block text-black">
+                        Products
+                      </span>
                     </h2>
                   </Link>
                 </div>
