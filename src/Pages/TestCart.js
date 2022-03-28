@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { Form } from "antd";
 import { FaShoppingCart } from "react-icons/fa";
+import { MdCancel } from "react-icons/md";
 
 import "./cart.css";
 
@@ -964,7 +965,16 @@ function TestCart() {
                     <div className="flex-col max-w-[550px] mx-auto">
                       {cartitem.map((data) => {
                         return (
-                          <div className="flex items-center justify-between my-2">
+                          <div className=" relative flex items-center justify-between my-2">
+                            <MdCancel
+                              className="absolute top-0 right-[-5px]"
+                              onClick={() =>
+                                dispatch({
+                                  type: "REMOVE_FROM_CART",
+                                  payload: data.uid,
+                                })
+                              }
+                            />
                             <div className="flex items-center space-x-2">
                               <img
                                 src={`https://cerbosys.in:4000/${data.product_image.substr(

@@ -82,7 +82,7 @@ const NavBar = (props) => {
   const SearchProduct = () => {
     if (search !== "") {
       history.push({
-        pathname: "/products",
+        pathname: "/search",
         search: `?productSearch=${search}`,
         // state: { detail: 'some_value' }
       });

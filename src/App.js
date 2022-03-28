@@ -35,6 +35,7 @@ import TestCart from "./Pages/TestCart";
 import Privacy from "./t&c/Privacy";
 import Condition from "./t&c/Condition";
 import { DocumentEdit } from "styled-icons/fluentui-system-filled";
+import Search from "./Search";
 
 export default class App extends Component {
   constructor(props) {
@@ -563,6 +564,7 @@ export default class App extends Component {
           <Route exact path="/designs" component={DesignList} />
           <Route exact path="/newuserlogin" component={TestCart} />
           <Route exact path="/testcart" component={TestCart} />
+          <Route exact path="/search" component={Search} />
           <Footer />
         </div>
         {/* <div
