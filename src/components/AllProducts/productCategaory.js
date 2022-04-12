@@ -9,8 +9,9 @@ import {
   Plist,
   DetailsContainer,
 } from "./productCategoryelem";
-import Slider from "react-slick";
-import { Link, useLocation } from "react-router-dom";
+
+import { FaHeart } from "react-icons/fa";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import axios from "axios";
 import { RiHeart3Line, RiHeart3Fill } from "react-icons/ri";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
@@ -24,6 +25,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Hero from "../Hero";
+import { WhatsappLogo } from "../Hero/mainElements";
+import { whats } from "../Hero/Icons";
 // import { Image } from "antd";
 
 // const cartnoti = {
@@ -209,6 +213,18 @@ const Pcategory = (props) => {
   };
   return (
     <>
+    {/* <Hero/> */}
+    <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
+     {/**Wish count start */}
+     <div className="fixed z-10 top-1/2 bg-orange-500 p-1 px-2 flex items-center  justify-center">
+          <NavLink to="/Mywishlist" className="text-white flex no-underline text-md">
+            {/* {wishcount ? <div className="pcount ">{wishcount} </div> : ""} */}
+
+            <FaHeart className="hover:text-red-500  text-xl md:!mr-1 " />
+            <span className="!hidden md:!inline">MY WISHLIST</span>
+          </NavLink>
+        </div>
+        {/**wish count end */}
       <div Style="text-align:center;position:relative;border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#BA7D82;">
         <p style={{ margin: 35 }}>
           <Link

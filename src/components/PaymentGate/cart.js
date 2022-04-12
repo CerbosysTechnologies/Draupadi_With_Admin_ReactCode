@@ -23,6 +23,8 @@ import moment from "moment";
 import { MdDeleteForever } from "react-icons/md";
 import { useHistory } from "react-router-dom";
 import { NoEncryption } from "@material-ui/icons";
+import { WhatsappLogo } from "../Hero/mainElements";
+import { whats } from "../Hero/Icons";
 const Cart = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -707,15 +709,37 @@ const Cart = (props) => {
 
   return (
     <>
+    <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
       <div
         className="hero is-white"
         Style="border-bottom-style:dashed;border-bottom-width:thin;border-bottom-color:#B77304;"
       >
         <div className="hero-body container">
-          <h4 className="title" style={{fontSize: "18px"}}>My Cart</h4>
+          <h4 className="title flex justify-center" style={{ fontSize: "18px" }}>
+            My Cart
+          </h4>
         </div>
       </div>
       <br />
+      <div className="container text-black" style={{ minWidth: 150 }}>
+                <Link to="/products" Style="text-decoration: none;">
+                  <h2
+                    className="title flex w-full items-center mt-2"
+                    style={{ color: "#B77304", fontSize: 18 }}
+                  >
+                    <AiOutlineArrowLeft
+                      style={{
+                        paddingRight: 15,
+                        fontSize: 30,
+                        color: "black",
+                      }}
+                    />
+                    <span className="flex-1 text-md block text-black">
+                      Products
+                    </span>
+                  </h2>
+                </Link>
+              </div>
       {cartitem.length ? (
         <div className="container">
           <div className="row">
@@ -733,25 +757,25 @@ const Cart = (props) => {
                   </h2>
                 </Link>
               </div> */}
-              <div className="container text-black" style={{ minWidth: 150 }}>
-                  <Link to="/products" Style="text-decoration: none;">
-                    <h2
-                      className="title flex w-full items-center mt-2"
-                      style={{ color: "#B77304", fontSize: 18 }}
-                    >
-                      <AiOutlineArrowLeft
-                        style={{
-                          paddingRight: 15,
-                          fontSize: 30,
-                          color: "black",
-                        }}
-                      />
-                      <span className="flex-1 text-md block text-black">
-                        Products
-                      </span>
-                    </h2>
-                  </Link>
-                </div>
+              {/* <div className="container text-black" style={{ minWidth: 150 }}>
+                <Link to="/products" Style="text-decoration: none;">
+                  <h2
+                    className="title flex w-full items-center mt-2"
+                    style={{ color: "#B77304", fontSize: 18 }}
+                  >
+                    <AiOutlineArrowLeft
+                      style={{
+                        paddingRight: 15,
+                        fontSize: 30,
+                        color: "black",
+                      }}
+                    />
+                    <span className="flex-1 text-md block text-black">
+                      Products
+                    </span>
+                  </h2>
+                </Link>
+              </div> */}
             </div>
             <div className="col">
               <div className="container">
@@ -911,7 +935,7 @@ const Cart = (props) => {
                               //   }
                               // );
                             }}
-                            style={{ color: "#808080"}}
+                            style={{ color: "#808080" }}
                           >
                             <ImCross />
                           </span>
@@ -936,40 +960,52 @@ const Cart = (props) => {
 
               <div>
                 <div className="container">
-                  <h3 style={{fontSize: "18px", fontWeight:"700", 
-                  borderBottom: "2px solid #00000080", display: "inline", 
-                  paddingBottom: -5, WebkitPaddingAfter:5}}>
-                    Your Shipping Address:</h3>
+                  <h3
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "700",
+                      borderBottom: "2px solid #00000080",
+                      display: "inline",
+                      paddingBottom: -5,
+                      WebkitPaddingAfter: 5,
+                    }}
+                  >
+                    Your Shipping Address:
+                  </h3>
                   {user.shippingDetails ? (
                     <div>
                       <br></br>
-                   <b> <p style={{textTransform: "capitalize"}}>
-                      {user.shippingDetails.first_name + " "}
-                      {user.shippingDetails.last_name + " "}
-                    </p> </b>
+                      <b>
+                        {" "}
+                        <p style={{ textTransform: "capitalize" }}>
+                          {user.shippingDetails.first_name + " "}
+                          {user.shippingDetails.last_name + " "}
+                        </p>{" "}
+                      </b>
 
-                    <p style={{marginTop: 15}}>
-                      {user.shippingDetails.address_line1 + " "}
-                      {user.shippingDetails.address_line2 + " "}
-                    </p>
+                      <p style={{ marginTop: 15 }}>
+                        {user.shippingDetails.address_line1 + " "}
+                        {user.shippingDetails.address_line2 + " "}
+                      </p>
 
-                    <p style={{marginTop: 15}}>
-                      {user.shippingDetails.city}, &nbsp;
-                      {user.shippingDetails.state_name}, &nbsp;
-                      {user.shippingDetails.postalcode}
-                    </p>
+                      <p style={{ marginTop: 15 }}>
+                        {user.shippingDetails.city}, &nbsp;
+                        {user.shippingDetails.state_name}, &nbsp;
+                        {user.shippingDetails.postalcode}
+                      </p>
 
-                    <b> <p style={{marginTop: 15}}>
-                      {user.shippingDetails.mobilenumber}
-                    </p> </b>
+                      <b>
+                        {" "}
+                        <p style={{ marginTop: 15 }}>
+                          {user.shippingDetails.mobilenumber}
+                        </p>{" "}
+                      </b>
                     </div>
                   ) : (
                     <p>Kindly update Shipping details</p>
                   )}
                   <Link to="/address" className="!text-neutral-700 ">
-                    <a style={{color: "blue"}}>
-                      Change Shipping Address?
-                    </a>
+                    <a style={{ color: "blue" }}>Change Shipping Address?</a>
                   </Link>
                 </div>
               </div>
@@ -1030,7 +1066,9 @@ const Cart = (props) => {
                         (user.shippingDetails ? false : true) || loading
                       }
                     >
-                      <FaShoppingCart style={{ marginRight: 10, paddingBottom: 3 }} />
+                      <FaShoppingCart
+                        style={{ marginRight: 10, paddingBottom: 3 }}
+                      />
                       {loading ? "Processing..." : "Proceed to Pay"}
                     </button>
                     // </Link>
@@ -1063,15 +1101,19 @@ const Cart = (props) => {
                       backgroundColor: "#808080",
                       color: "white",
                       marginLeft: 30,
-                      display: "none"
+                      display: "none",
                     }}
                     className="button is-large flex items-center "
                   >
                     <MdDeleteForever size={20} />
-                    &nbsp;<span style={{
-                      paddingTop: 6 ,
-                      
-                    }}>Clear Cart</span>
+                    &nbsp;
+                    <span
+                      style={{
+                        paddingTop: 6,
+                      }}
+                    >
+                      Clear Cart
+                    </span>
                   </button>
                 </div>
               </div>

@@ -2,20 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Row, Form, Col, Table } from "react-bootstrap";
 import axios from "axios";
 import authHeaderuser from "../../services/auth-headers";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-//import { MDBInput } from "mdbreact";
-//import NavBar from '../NavBar/index'
-import Footer from "../Footer/index";
-import { Link } from "react-router-dom";
-import { FaLongArrowAltLeft } from "react-icons/fa";
-import { Refresh } from "styled-icons/boxicons-regular";
+
+import { Link, useHistory } from "react-router-dom";
+
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import './shippingAddress.css';
+import "./shippingAddress.css";
 
 const Ships = () => {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const [update, setUpdate] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -215,6 +211,7 @@ const Ships = () => {
             draggable: true,
             progress: undefined,
           });
+          history.push("/profile");
         }
 
         if (res.data.status == 400) {

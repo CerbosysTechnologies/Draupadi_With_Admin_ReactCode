@@ -7,6 +7,8 @@ import edit from "./profileIcons/edit.svg";
 import loc from "./profileIcons/loc.svg";
 import logout from "./profileIcons/logout.svg";
 import notes from "./profileIcons/notes.svg";
+import { WhatsappLogo } from "../components/Hero/mainElements";
+import { whats } from "../components/Hero/Icons";
 
 const FeaturedDiv = styled.div`
   display: flex;
@@ -53,6 +55,7 @@ export default function Profile(props) {
   }
   return (
     <>
+    <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
       <div className="container !!flex-col  md:!flex">
         <div
           className="container"

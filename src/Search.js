@@ -9,25 +9,36 @@ import { Row, Col, Spin } from "antd";
 function Search() {
   const { search } = useLocation();
   const { productSearch } = queryString.parse(search);
+  
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [length, setLength] = useState("");
 
   useEffect(async () => {
     setLoading(true);
+    
+  const { productSearch } = queryString.parse(search);
     await axios
       .get("https://cerbosys.in:4000/draupadi/getProductsData")
       .then((res) => {
-       setProducts(res.data.data);
+       setProducts(res.data.data.filter((product) => {
+        if (productSearch) {
+          return product.product_name
+            .toLowerCase()
+            .includes(productSearch.toLowerCase());
+        } else {
+          return;
+        }
+      }));
         console.log(res.data.data)
         setLoading(false);
       }).catch(err=>console.log(err))
-  }, []);
+  }, [search]);
 
  
   return (
     <div>
-      <h2 className="flex justify-center">{` Search result for "${productSearch}" `}</h2>
+      <h2 className="flex justify-center">{` Search result for "${productSearch?productSearch:""}" `}</h2>
      
 
       {loading ? (
@@ -42,15 +53,15 @@ function Search() {
             {products && products.length ? (
               products
 
-                .filter((product) => {
-                  if (productSearch) {
-                    return product.product_name
-                      .toLowerCase()
-                      .includes(productSearch.toLowerCase());
-                  } else {
-                    return product;
-                  }
-                })
+                // .filter((product) => {
+                //   if (productSearch) {
+                //     return product.product_name
+                //       .toLowerCase()
+                //       .includes(productSearch.toLowerCase());
+                //   } else {
+                //     return;
+                //   }
+                // })
                 .map((product, index) => (
                   <Col lg={4} md={6} sm={12} xs={24}>
                     <div className="mr-4">
@@ -63,10 +74,10 @@ function Search() {
                   </Col>
                 ))
             ) : (
-              <div className="column">
-                <span className="title has-text-grey-light">
+              <div className="column flex justify-center items-center ">
+                <div className="title has-text-grey-light flex justify-center items-center my-4">
                   No products found!
-                </span>
+                </div>
               </div>
             )}
           </Row>
