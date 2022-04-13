@@ -1,10 +1,14 @@
 import React from "react";
 import "../t&c/privacypolicy.css";
 
+import { whats } from "../components/Hero/Icons";
+import {WhatsappLogo} from '../components/Hero/mainElements'
+
 export default function Privacy(){
 
     return(
         <div>
+            <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
          <div className="privacypolicypage">
          <div className="policycontent pb-9"><br/><br/>
          <b>SHIPPING POLICY</b>
