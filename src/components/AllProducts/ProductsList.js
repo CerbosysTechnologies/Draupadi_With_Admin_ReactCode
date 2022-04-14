@@ -9,6 +9,8 @@ import { useLocation } from "react-router-dom";
 // import { Table } from "react-bootstrap";
 //import Footer from '../Footer/index'
 import queryString from "query-string";
+import { WhatsappLogo } from "../Hero/mainElements";
+import { whats } from "../Hero/Icons";
 const ProductList = (props) => {
   // const [search, setSearch] = useState("");
   const { products } = props.context;
@@ -18,6 +20,7 @@ const ProductList = (props) => {
 
   return (
     <>
+    <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
       <div className="container" Style="position:relative;">
         <>
           <div className="container">

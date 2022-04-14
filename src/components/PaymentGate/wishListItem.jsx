@@ -12,6 +12,8 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import "./wishlist.css";
 import { useDispatch, useSelector } from "react-redux";
+import { WhatsappLogo } from "../Hero/mainElements";
+import { whats } from "../Hero/Icons";
 
 export default function WishList() {
   const dispatch = useDispatch();
@@ -73,6 +75,7 @@ export default function WishList() {
 
   return (
     <>
+    <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
       <div className="container" Style="position:relative;">
         <div
           className="hero is-white"
