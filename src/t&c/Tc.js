@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../t&c/tc.css";
+
+import { whats } from "../components/Hero/Icons";
+import {WhatsappLogo} from '../components/Hero/mainElements'
+
+
 
 export default function Tc(){
 
+
     return(
         <div>
+            <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
          <div className="termpage">
          <div className="termbox">
          <br/><br/>

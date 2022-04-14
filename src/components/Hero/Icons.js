@@ -1,4 +1,4 @@
-export const whats  = <svg id="whatsappIcon" xmlns="http://www.w3.org/2000/svg"  width="59" height="59" viewBox="0 0 1219.547 1225.02">
+export const whats  = <svg id="whatsappIcon" xmlns="http://www.w3.org/2000/svg"  width="42" height="42" viewBox="0 0 1219.547 1225.02">
   <defs>
     <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#20b038"/>

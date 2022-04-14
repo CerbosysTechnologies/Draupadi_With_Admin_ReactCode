@@ -1,10 +1,19 @@
 import React from "react";
-import "../t&c/condition.css"
+//import { WhatsappLogo } from "../Hero/mainElements";
+//import { whats } from "../Hero/Icons";
+
+import { whats } from "../components/Hero/Icons";
+import {WhatsappLogo} from '../components/Hero/mainElements'
+
+import "../t&c/condition.css";
+
 
 export default function Condition(){
 
     return(
+        
         <div className="conditionpage">
+            <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
         <div className="conditioncontent">
         <br/><br/>
 <b>TERMS & CONDITIONS</b><br/><br/>

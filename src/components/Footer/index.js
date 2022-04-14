@@ -146,7 +146,7 @@ const Footer = () => {
               {/* <FooterLink  >FAQ</FooterLink> */}
               <strong>
                 <span>
-                  <Link to="/shipping" className="text-black no-underline">
+                  <Link to="/shipping" className="text-black no-underline" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
                     Shipping & Returns
                   </Link>
                 </span>
@@ -156,14 +156,14 @@ const Footer = () => {
                   <Link
                     to="/termsandconditions"
                     className="text-black no-underline"
-                  >
+                    onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
                     Terms & Condition
                   </Link>
                 </span>
               </strong>
               <strong>
                 <span>
-                  <Link to="/privacyPolicy" className="text-black no-underline">
+                  <Link to="/privacyPolicy" className="text-black no-underline" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
                     Privacy Policy
                   </Link>
                 </span>
