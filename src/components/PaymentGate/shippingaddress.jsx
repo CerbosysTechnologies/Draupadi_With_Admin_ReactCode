@@ -366,9 +366,13 @@ const Ships = () => {
                       Please provide a valid zip.
                     </Form.Control.Feedback>
                   </Form.Group>
+                  {console.log("state--", state)}
                   <Form.Group as={Col} md="3" controlId="validationCustom07">
                     <Form.Label>State</Form.Label>
-                    <Form.Select onChange={(e) => setState(e.target.value)}>
+                    <Form.Select
+                      defaultValue={state}
+                      onChange={(e) => setState(e.target.value)}
+                    >
                       {statess.map((data, i) => {
                         return (
                           <option value={data} key={i}>
