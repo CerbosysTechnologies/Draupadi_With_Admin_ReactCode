@@ -31,8 +31,10 @@ import Logintbygoogle from "../../component/loginwithgoogle";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FiUser } from "react-icons/fi";
+//import { FiUser } from "react-icons/fi";
+import { FaUser } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
+import {FaSearch} from "react-icons/fa"
 
 var scrollToElement = require("scroll-to-element");
 const NavBar = (props) => {
@@ -220,7 +222,10 @@ const NavBar = (props) => {
                     // paddingLeft: 20,
                     // paddingTop: 20,
 
-                    paddingBottom: 15,
+                    paddingBottom: -8,
+                    WebkitPaddingAfter: -10,
+                    MozPaddingStart: 10,
+                    msPaddingBottom: 10,
                     cursor: "pointer",
                   }}
                 >
@@ -233,8 +238,10 @@ const NavBar = (props) => {
                     // paddingRight: 10,
                     // paddingLeft: 10,
                     // paddingTop: 5,
-                    paddingBottom: 12,
+                    paddingBottom: 18,
                     WebkitPaddingAfter: 20,
+                    MozPaddingStart: 10,
+                    msPaddingBottom: 10,
                     cursor: "pointer",
                   }}
                 >
@@ -250,7 +257,7 @@ const NavBar = (props) => {
                   >
                     {userToken ? (
                       <NavLink to="/profile">
-                        <FiUser size={25} className="cursor-pointer mr-4" />
+                        <FaUser size={20} className="cursor-pointer mr-4" />
                       </NavLink>
                     ) : (
                       <NavLink
@@ -265,17 +272,20 @@ const NavBar = (props) => {
               )}
               <li
                 onClick={showModal}
-                className="nav-item "
+                className="nav-item"
                 style={{
                   // paddingRight: 10,
                   // paddingLeft: 10,
                   // paddingTop: 20,
-                  paddingBottom: 12,
-                  WebkitPaddingAfter: 18,
+                  paddingBottom: -8,
+                  WebkitPaddingAfter: 10,
+                  MozPaddingStart: 10,
+                  msPaddingBottom: 10,
                   cursor: "pointer",
                 }}
               >
-                <AiOutlineSearch size={20} className="mr-3" />
+                {/* <AiOutlineSearch size={20} className="mr-3" /> */}
+                <FaSearch size={18} className="mr-3" />
               </li>
               <li
                 onClick={() => {
@@ -288,10 +298,12 @@ const NavBar = (props) => {
                   // paddingRight: 10,
                   // paddingLeft: 10,
                   // paddingTop: 20,
-                  paddingBottom: 12,
-                  WebkitPaddingAfter: 20,
+                  paddingBottom: -8,
+                  WebkitPaddingAfter: 10,
+                  MozPaddingEnd:-8,
+                  msPaddingBottom: 10,
                   cursor: "pointer",
-                  fontSize: 20,
+                  fontSize: 18,
                 }}
               >
                 <NavLink to="/cart">
@@ -341,7 +353,8 @@ const NavBar = (props) => {
             onChange={(e) => setSearch(e.target.value)}
             value={search}
           />
-          <AiOutlineSearch size={20} className="mr-3" />
+          {/* <AiOutlineSearch size={20} className="mr-3" /> */}
+          <FaSearch size={20} className="mr-3" />
         </div>
       </Modal>
     </nav>

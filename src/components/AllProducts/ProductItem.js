@@ -19,7 +19,7 @@ const ProductItem = (props) => {
         className=" column is-3"
         style={{
           marginTop: 25,
-          marginBottom: 35,
+          marginBottom: -25,
           backgroundColor: "transparent",
         }}
       >
@@ -52,6 +52,7 @@ const ProductItem = (props) => {
                     pathname: `/products/${product.product_id}`,
                     query: { id: product.product_id },
                   }}
+                  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
                 >
                   <img
                     src={`https://cerbosys.in:4000${sStr}`}
@@ -63,7 +64,7 @@ const ProductItem = (props) => {
             </div>
           </div>
           <div className="container" Style="text-align:center;">
-            <h8 className="title" style={{ fontSize: 18, color: "black" }}>
+            <h8 className="title" style={{ fontSize: 20, color: "black" }}>
               <strong className="flex justify-center">
                 {product.product_name.toUpperCase()}
               </strong>
@@ -74,7 +75,7 @@ const ProductItem = (props) => {
               className="text-xl ml-1"
               style={{ fontSize: 18, color: "black" }}
             >
-              <strong style={{ fontSize: 15, color: "black" }}>
+              <strong style={{ fontSize: 18, color: "black" }}>
                 ₹ {product.product_price}
               </strong>
             </span>

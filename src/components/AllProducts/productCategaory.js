@@ -334,7 +334,7 @@ const Pcategory = (props) => {
                       }}
                     />
                     <strong style={{ paddingLeft: "5px" }}>
-                      &nbsp; Choose your design&nbsp;&nbsp;&nbsp;
+                      &nbsp; Make your own bag &nbsp;&nbsp;&nbsp;
                     </strong>
                   </span>
 
@@ -636,7 +636,7 @@ const Pcategory = (props) => {
                         // });
                       }}
                       className=" p-2"
-                      Style="background-color:#000000;color:white;border-radius:5px;height:40px;width:150px;"
+                      Style="background-color:#000000;color:white;border-radius:0px;height:40px;width:150px;"
                     >
                       <strong style={{ color: "white",fontSize:'16px',fontWeight:'100' }}> ADD TO CART</strong>
                     </button>
@@ -661,7 +661,7 @@ const Pcategory = (props) => {
                             //   }
                             // );
                           }}
-                          className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 inline p-1 rounded-md text-white w-[185px]  " style={{border:"3px solid black"}}
+                          className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 inline p-1 text-white w-[185px]  " style={{border:"3px solid black"}}
                         >
                           <span>
                             <RiHeart3Fill
@@ -712,7 +712,7 @@ const Pcategory = (props) => {
                               // );
                             }
                           }}
-                      className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 p-1 rounded-md text-white w-[185px]" style={{border:"3px solid black"}}
+                      className="bg-[#FFFFFF] cursor-pointer flex items-center space-x-1 p-1 text-white w-[185px]" style={{border:"3px solid black"}}
                         >
                           <span>
                             <RiHeart3Line

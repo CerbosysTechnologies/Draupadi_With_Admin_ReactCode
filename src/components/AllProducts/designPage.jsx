@@ -24,10 +24,10 @@ const DesignItem = props => {
   </div>
 </div>
 <div className="container" Style='text-align:center;'>
-<h8 className='title' style={{fontSize:12,color:'#555'}}><strong>{data.design_code.toUpperCase()}</strong></h8>
+<h8 className='title' style={{fontSize:20,color:'#555'}}><strong>{data.design_code.toUpperCase()}</strong></h8>
 </div>
 <div className="container" Style='text-align:center;'>
-<h8 className='title' style={{fontSize:15,color:'black'}} ><strong style={{wordSpacing:10}}>Price {data.price}/-</strong></h8>
+<h8 className='title' style={{fontSize:18,color:'black'}} ><strong style={{wordSpacing:10}}>Price {data.price}/-</strong></h8>
 </div>
 </div>
           </div>

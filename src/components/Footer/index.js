@@ -264,10 +264,15 @@ justify-content:space-between;"
         font-family:Amiri,serif; font-style: normal;"
                 >
                   <ReadMore>
-                    Draupadi was established in February 2021 at Mathura, the
+                    {/* Draupadi was established in February 2021 at Mathura, the
                     homeland and birthplace of Lord Krishna. Mathura is known
                     for its textile industry and especially for Sari Printing &
-                    Manufacturing. Draupadi upcycles sari wastes to create quirky bags and accessories. Women from underprivileged backgrounds make all our products. We at Draupadi also aim at slow fashion and sustainability. All our products are handmade with concern for the environment and its people.
+                    Manufacturing. Draupadi upcycles sari wastes to create quirky bags and accessories. Women from underprivileged backgrounds make all our products. We at Draupadi also aim at slow fashion and sustainability. All our products are handmade with concern for the environment and its people. */}
+
+                    Draupadi is a conscious fashion house that crafts bold bags and accessories from excess Sari material.
+                    Born in the city of Yamuna, Draupadi is a confluence of art, sustainability, and empowerment. All bags are handmade
+                    by underprivileged women residing in Mathura. The vision is to bring the soul back to fashion, support livelihoods,
+                    reduce the carbon footprint, and inspire others to change, one sari at a time.
                   </ReadMore>
                 </p>
               </strong>
