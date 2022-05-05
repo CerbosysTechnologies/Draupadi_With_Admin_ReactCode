@@ -265,7 +265,7 @@ const NavBar = (props) => {
                         style={{
                           marginRight: 22
                         }}/>
-                      </NavLink>
+                      </NavLink> 
                     ) : (
                       <NavLink
                         to="/login"
