@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { NavLink } from "./NavbarElements";
 import { Link, useLocation } from "react-router-dom";
 import withContext from "../AllProducts/button";
@@ -34,7 +35,10 @@ import { useSelector } from "react-redux";
 //import { FiUser } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-import {FaSearch} from "react-icons/fa"
+import {FaSearch} from "react-icons/fa";
+import Search from "./search_icon.svg";
+import Person from "./person_icon_svg.svg";
+import Cart from "./cart_icon_svg.svg";
 
 var scrollToElement = require("scroll-to-element");
 const NavBar = (props) => {
@@ -218,12 +222,11 @@ const NavBar = (props) => {
                 <li
                   className="nav-item"
                   style={{
-                    // paddingRight: 10,
-                    // paddingLeft: 20,
-                    // paddingTop: 20,
-
-                    paddingBottom: -8,
-                    WebkitPaddingAfter: -10,
+                    paddingRight: 10,
+                    paddingLeft: 20,
+                    paddingTop: 20,
+                    paddingBottom: 15,
+                    WebkitPaddingAfter: 15,
                     MozPaddingStart: 10,
                     msPaddingBottom: 10,
                     cursor: "pointer",
@@ -235,13 +238,13 @@ const NavBar = (props) => {
                 <li
                   className="nav-item mt-3"
                   style={{
-                    // paddingRight: 10,
-                    // paddingLeft: 10,
-                    // paddingTop: 5,
-                    paddingBottom: 18,
-                    WebkitPaddingAfter: 20,
+                     paddingRight: 1,
+                     paddingLeft: 10,
+                     paddingTop: 5,
+                    paddingBottom: 20,
+                    WebkitPaddingAfter: 27,
                     MozPaddingStart: 10,
-                    msPaddingBottom: 10,
+                    msPaddingBottom: 8,
                     cursor: "pointer",
                   }}
                 >
@@ -252,12 +255,16 @@ const NavBar = (props) => {
                       fontFamily: "Amiri,serif",
                       fontStyle: "normal",
                       texTransform: "capitalize",
-                      padding:"5"
+                      //padding:"5"
                     }}
                   >
                     {userToken ? (
                       <NavLink to="/profile">
-                        <FaUser size={20} className="cursor-pointer mr-4" />
+                        {/* <FaUser size={20} className="cursor-pointer mr-4" /> */}
+                        <img src={Person} alt="" width={16}  height={16} 
+                        style={{
+                          marginRight: 22
+                        }}/>
                       </NavLink>
                     ) : (
                       <NavLink
@@ -274,18 +281,19 @@ const NavBar = (props) => {
                 onClick={showModal}
                 className="nav-item"
                 style={{
-                  // paddingRight: 10,
-                  // paddingLeft: 10,
-                  // paddingTop: 20,
-                  paddingBottom: -8,
-                  WebkitPaddingAfter: 10,
-                  MozPaddingStart: 10,
-                  msPaddingBottom: 10,
+                  paddingRight: 10,
+                  paddingLeft: 1,
+                  paddingTop: 9,
+                  paddingBottom: 15,
+                  WebkitPaddingAfter: 19,
+                  MozPaddingStart: 8,
+                  msPaddingBottom: 8,
                   cursor: "pointer",
                 }}
               >
                 {/* <AiOutlineSearch size={20} className="mr-3" /> */}
-                <FaSearch size={18} className="mr-3" />
+                {/* <FaSearch size={18} className="mr-3" /> */}
+                <img src={Search} alt="" width={16}  height={16}/>
               </li>
               <li
                 onClick={() => {
@@ -295,11 +303,11 @@ const NavBar = (props) => {
                 }}
                 className="nav-item mr-4"
                 style={{
-                  // paddingRight: 10,
-                  // paddingLeft: 10,
-                  // paddingTop: 20,
-                  paddingBottom: -8,
-                  WebkitPaddingAfter: 10,
+                  paddingRight: 10,
+                  paddingLeft: 10,
+                  paddingTop: 7,
+                  paddingBottom: 15,
+                  WebkitPaddingAfter: 23,
                   MozPaddingEnd:-8,
                   msPaddingBottom: 10,
                   cursor: "pointer",
@@ -309,7 +317,8 @@ const NavBar = (props) => {
                 <NavLink to="/cart">
                   {cartcount ? <div className="pcount">{cartcount} </div> : ""}
 
-                  <FaShoppingCart />
+                  {/* <FaShoppingCart /> */}
+                  <img src={Cart} alt="" width={18}  height={18}/>
                 </NavLink>
               </li>
             </ul>
