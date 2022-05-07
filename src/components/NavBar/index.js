@@ -39,7 +39,7 @@ import {FaSearch} from "react-icons/fa";
 import Search from "./search_icon.svg";
 import Person from "./person_icon_svg.svg";
 import Cart from "./cart_icon_svg.svg";
-
+import Logo from "./draupadi.svg.svg"
 var scrollToElement = require("scroll-to-element");
 const NavBar = (props) => {
   const [visible, setVisible] = useState(false);
@@ -168,10 +168,8 @@ const NavBar = (props) => {
             onClick={() => history.push("/")}
             className="my-auto flex justify-center items-center cursor-pointer "
           >
-            <img
-              src="/Icons.png"
-              className="w-[100px] flex-1 md:!w-40 object-contain"
-            />
+            {/* <img src="/Icons.png" className="w-[100px] flex-1 md:!w-40 object-contain" /> */}
+            <img src={Logo} className="w-[100px] flex-1 md:!w-40 object-contain" alt="" />
           </div>
 
           {/* {logg}     */}
