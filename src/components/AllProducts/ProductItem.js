@@ -56,7 +56,7 @@ const ProductItem = (props) => {
                 >
                   <img
                     src={`https://cerbosys.in:4000${sStr}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", height:"21 0px" }}
                     alt="Placeholder"
                   />
                 </Link>

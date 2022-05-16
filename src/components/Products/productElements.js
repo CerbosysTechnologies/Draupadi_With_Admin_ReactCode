@@ -74,10 +74,10 @@ object-fit:cover;
 export const ProductImg = styled.img`
 height: 380px;
 width: 380px;
-border-radius:10px;
-box-shadow: 0px 6px 7px 0px rgba(35,35,35,0.34);
--webkit-box-shadow:  0px 6px 7px 0px rgba(35,35,35,0.34);
--moz-box-shadow:  0px 6px 7px 0px rgba(35,35,35,0.34);
+border-radius:0px;
+box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
+-webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+-moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
 :hover{
     transform:translateY(-10px);
 }
@@ -99,19 +99,19 @@ box-shadow: 0px 6px 7px 0px rgba(35,35,35,0.34);
     width:385px;
 }
 @media only screen and (max-width:1024px) and (min-width:769px){
-    height:auto;
+    height:405px;
     width:385px;
 }
 @media only screen and (max-width:1366px) and (min-width:1024px){
-    height:auto;
+    height:405px;
     width:385px;
 }
 @media only screen and (max-width:1440px) and (min-width:1367px){
-    height:auto;
+    height:405px;
     width:385px;
 }
 @media only screen and (max-width:1920px) and (min-width:1441px){
-    height:auto;
+    height:405px;
     width:385px;
 }
 `

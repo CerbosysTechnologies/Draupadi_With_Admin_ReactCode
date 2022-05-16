@@ -19,7 +19,8 @@ const DesignItem = props => {
 -moz-box-shadow: 0px 3px 6px #23232300;'>
     <figure className="image is-128x128" style={{objectFit:'cover',width:'100%'}}>
       {/* <img src={`https://45.80.152.232:4000${data.designimage.substr(8)}`} style={{width:'100%'}} alt="Placeholder"/> */}
-      <img src={`https://cerbosys.in:4000${data.designimage.substr(8)}`} style={{width:'100%'}} alt="Placeholder"/>
+      <img src={`https://cerbosys.in:4000${data.designimage.substr(8)}`} 
+      style={{width:'100%'}} alt="Placeholder"/>
     </figure>
   </div>
 </div>
