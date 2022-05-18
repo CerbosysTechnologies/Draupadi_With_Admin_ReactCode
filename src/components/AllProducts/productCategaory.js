@@ -770,8 +770,10 @@ const Pcategory = (props) => {
                     </span>
                     
                   </span>
-                  <p style={{ textTransform: "capitalize" }}>
+                  <p style={{ textTransform: "capitalize", whiteSpace: "pre-line"}}>
+                    {/* This content to be displayed in bullets.. */}
                     {product.product_description}
+                    {/* {product.product_description} */}
                   </p>
                 </div>
               </DetailsContainer>

@@ -16,10 +16,10 @@ const ProductItem = (props) => {
   return (
     <>
       <div
-        className=" column is-3"
+        className=" column is-4"
         style={{
-          marginTop: 25,
-          marginBottom: -25,
+          marginTop: 15,
+          marginBottom: -15,
           backgroundColor: "transparent",
         }}
       >
@@ -31,7 +31,7 @@ const ProductItem = (props) => {
           <div
             className="card"
             style={{
-              borderRadius: 15,
+              borderRadius: "25px",
               overflow: "hidden",
               outline: "none",
               backgroundColor: "transparent",
@@ -44,8 +44,8 @@ const ProductItem = (props) => {
 -moz-box-shadow: 0px 3px 6px #23232300;"
             >
               <figure
-                className="image is-1by1"
-                style={{ objectFit: "cover", width: "100%" }}
+                className="image is-16by9"
+                style={{ objectFit: "cover", width: "100%", height:"492px" }}
               >
                 <Link
                   to={{
@@ -56,7 +56,7 @@ const ProductItem = (props) => {
                 >
                   <img
                     src={`https://cerbosys.in:4000${sStr}`}
-                    style={{ width: "100%", height:"21 0px" }}
+                    style={{ width: "100%", height:"510px" }}
                     alt="Placeholder"
                   />
                 </Link>
@@ -64,9 +64,10 @@ const ProductItem = (props) => {
             </div>
           </div>
           <div className="container" Style="text-align:center;">
-            <h8 className="title" style={{ fontSize: 20, color: "black" }}>
+            <h8 className="title" style={{ fontSize: 18, color: "black"}}>
               <strong className="flex justify-center">
-                {product.product_name.toUpperCase()}
+                {/* {product.product_name.toUpperCase()} */}
+                {product.product_name}
               </strong>
             </h8>
           </div>
