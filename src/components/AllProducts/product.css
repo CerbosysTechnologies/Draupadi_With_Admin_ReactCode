@@ -9,7 +9,9 @@
   right: 3% !important;
   z-index: 1;
 }
-
+p>ul>li{
+  list-style-type:disc;
+}
 .slick-prev {
   left: 3% !important;
   z-index: 1;

@@ -91,6 +91,10 @@ const Pcategory = (props) => {
     subcategory_name: "",
     weight: "",
   });
+
+  const desc = product.product_description.split("\n");
+  console.log(desc);
+
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -211,6 +215,7 @@ const Pcategory = (props) => {
         });
     }
   };
+  
   return (
     <>
     {/* <Hero/> */}
@@ -770,9 +775,13 @@ const Pcategory = (props) => {
                     </span>
                     
                   </span>
-                  <p style={{ textTransform: "capitalize", whiteSpace: "pre-line"}}>
+                  <p style={{ textTransform: "capitalize"}}>
                     {/* This content to be displayed in bullets.. */}
-                    {product.product_description}
+                    <ul>
+                      {/* <li>
+                        {product.product_description}</li> */}
+                        {desc.map((line)=>{return <li>{line}</li>})}
+                    </ul>
                     {/* {product.product_description} */}
                   </p>
                 </div>

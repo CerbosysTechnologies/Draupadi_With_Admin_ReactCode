@@ -100,7 +100,7 @@ const NavBar = (props) => {
   return (
     <nav
       style={{ justifyContent: "right", backgroundColor: "white", zIndex: 20 }}
-      className="flex h-[90px] justify-center items-center !max-w-screen sticky top-0  bg-[#f1f0f0] px-4 z-20 "
+      className="flex h-[90px] justify-center items-center !max-w-screen sticky top-0  bg-[#f1f0f0] px-2 z-10 "
 
       //   `${
       //   navBar
@@ -134,7 +134,8 @@ const NavBar = (props) => {
           return (
             // <Link to={`/products`} className=" !no-underline">
             <div
-              className=" no-underline  border-t-[1px] border-gray-500 h-11 flex items-center hover:bg-slate-200"
+              // className="no-underline  border-t-[1px] border-gray-500 h-11 flex items-center hover:bg-slate-200"
+              className="no-underline  border-t-[1px] border-gray-500 h-11 flex items-center hover:bg-slate-200"
               onClick={() => {
                 setToggle(!toggle);
                 history.push("/products");
@@ -181,7 +182,7 @@ const NavBar = (props) => {
             {category.map((data, index) => {
               return (
                 <div
-                  className=" cursor-pointer flex justify-center items-center "
+                  className=" cursor-pointer flex justify-center items-center text-lg"
                   onClick={() => {
                     // if (location.pathname.split("/")[1] == "products") {
                     //   scrollToElement(
@@ -201,7 +202,7 @@ const NavBar = (props) => {
                   }}
                 >
                   <span
-                    className="p-2 !no-underline flex justify-start hover:!text-red-600 text-sm"
+                    className="p-2 !no-underline flex justify-start hover:!text-red-600"
                     style={{ color: "black" }}
                   >
                     {data.category_name}
@@ -249,7 +250,7 @@ const NavBar = (props) => {
                   <strong
                     style={{
                       color: "#555",
-                      fontSize: "15px",
+                      fontSize: "1.125rem",
                       fontFamily: "Amiri,serif",
                       fontStyle: "normal",
                       texTransform: "capitalize",
@@ -267,8 +268,7 @@ const NavBar = (props) => {
                     ) : (
                       <NavLink
                         to="/login"
-                        className="cursor-pointer no-underline mr-4"
-                      >
+                        className="cursor-pointer no-underline mr-4">
                         Login
                       </NavLink>
                     )}
@@ -309,7 +309,7 @@ const NavBar = (props) => {
                   MozPaddingEnd:-8,
                   msPaddingBottom: 10,
                   cursor: "pointer",
-                  fontSize: 18,
+                  fontSize: "1.125rem",
                 }}
               >
                 <NavLink to="/cart">

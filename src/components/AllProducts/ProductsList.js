@@ -68,7 +68,9 @@ const ProductList = (props) => {
                                 x.category_name.toLowerCase().split(" ")[0]
                               }`}
                             >
-                              {x.category_name.toUpperCase()}{" "}
+                              {/* Category not in upper case. */}
+                              {/* {x.category_name.toUpperCase()}{" "} */}
+                              {x.category_name}{" "} 
                             </medium>
                           </h2>
                         </div>

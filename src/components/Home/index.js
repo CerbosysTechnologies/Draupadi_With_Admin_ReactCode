@@ -28,8 +28,8 @@ const Home = () => {
         {/**wish count end */}
         <Hero />
         <Content />
-        <Products />
         <Shop />
+        <Products />        
         <Social />
       </div>
     </>
