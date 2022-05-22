@@ -1,8 +1,15 @@
 import React from 'react';
-import social1 from '../../images/_DSC4862.jpg';
-import social2 from '../../images/_DSC4572.jpg';
-import social3 from '../../images/_DSC4773.jpg';
-import social4 from '../../images/_DSC4797.jpg';
+// import social1 from '../../images/_DSC4862.jpg';
+// import social2 from '../../images/_DSC4572.jpg';
+// import social3 from '../../images/_DSC4773.jpg';
+// import social4 from '../../images/_DSC4797.jpg';
+
+import social1 from '../../images/socialimpressions/si1.jpg';
+import social2 from '../../images/socialimpressions/si2.jpg';
+import social3 from '../../images/socialimpressions/si3.jpg';
+import social4 from '../../images/socialimpressions/si4.jpg';
+
+
 import { SocialContainer,SocialCard,SocialHeader,SocialHeading,SocialWrapper,SocialImg } from './socialElements';
 
 const Social = React.memo(() => {

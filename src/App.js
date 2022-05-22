@@ -37,6 +37,8 @@ import Condition from "./t&c/Condition";
 import { DocumentEdit } from "styled-icons/fluentui-system-filled";
 import Search from "./Search";
 
+import RevisedProfile from './component/newprofile/revisedprofile'
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -549,8 +551,10 @@ export default class App extends Component {
             />
           </Route>
           <Route exact path={["/"]} component={Home} />
+          
           {/* <Route exact path="/register" component={Register} /> */}
-          <Route exact path="/profile" component={Profile} />
+          {/* <Route exact path="/profile" component={Profile} /> */}
+          <Route exact path="/profile" component={RevisedProfile} />
           {/* <Route exact path='/aboutus'component={Condition}/>
             <Route exact path='/cancelandreturn'component={Cancel}/>*/}
           <Route exact path="/privacyPolicy" component={Tc} />

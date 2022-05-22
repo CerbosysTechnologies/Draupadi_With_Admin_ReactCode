@@ -31,7 +31,7 @@ position:relative;
 `
 
 export const SocialImg = styled.img`
-height: 100%;
+max-height: 100%;
 max-width: 100%;
 padding:0px;
 display:flex;

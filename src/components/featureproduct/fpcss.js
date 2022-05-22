@@ -112,7 +112,7 @@ box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
     height:405px;
     width:385px;
 }
-`;
+`
 
 export const ProductHeading = styled.h1`
 // font-size: clamp(2rem,2.4vw,3rem);
@@ -162,3 +162,69 @@ export const ProductHeader = styled.div`
         text-align:justify;
     }`    
 
+
+    //For Different Images
+
+export const MyWrapper = styled.div`
+display: flex;`;
+
+    export const Product1 = styled.img`
+    height: 380px;
+    width: 480px;
+    border-radius:0px;
+    box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
+    -webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+    -moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+    @media only screen and (max-width:320px){
+        height:300px;
+        width:280px;
+    }
+    @media only screen and (max-width: 375px) and (min-width: 321px){
+        height:355px;
+        width:335px;
+    }
+    @media only screen and (max-width: 425px) and (min-width: 376px){
+        height:405px;
+        width:385px;
+    }
+    @media only screen and (max-width: 768px) and (min-width: 426px){
+        height:405px;
+        width:385px;
+    }
+    @media only screen and (max-width:1024px) and (min-width:769px){
+        height:405px;
+        width:385px;
+    }
+    @media only screen and (max-width:1366px) and (min-width:1024px){
+        height:405px;
+        width:385px;
+    }
+    @media only screen and (max-width:1440px) and (min-width:1367px){
+        height:405px;
+        width:385px;
+    }
+    @media only screen and (max-width:1920px) and (min-width:1441px){
+        height:405px;
+        width:385px;
+        margin: 10px;
+    }
+    
+    `;
+
+    export const Product2 = styled.img`
+    height: 380px;
+    width: 280px;
+    border-radius:0px;
+    box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
+    -webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+    -moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+    `;
+
+    export const Product3 = styled.img`
+    height: 380px;
+    width: 380px;
+    border-radius:0px;
+    box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
+    -webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+    -moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+    `;

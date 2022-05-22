@@ -26,12 +26,12 @@ const Content = () => {
             }}
           >
             {" "}
-            Draupadi{" "}
+            {/* Draupadi{" "} */}
           </Header>
           <br />
           <p
             style={{
-              fontSize: 20,
+              fontSize: 21,
               textAlign: "center",
               fontFamily: "Amiri,serif",
               color: "#404040",
@@ -41,15 +41,15 @@ const Content = () => {
             Empress | Empowering | Fearless
           </p>
           <br />
-          <p style={{ color: "#E71E2D", fontSize: 18, textAlign: "center" }}>
-            “There's more to her, There's more to saris.”
+          <p style={{ color: "#E71E2D", fontSize: 22, textAlign: "center" }}>
+            <b>“There's more to her, There's more to saris.”</b>
           </p>
         </div>
         <br />
         <br />
         <div className="row">
           <div className="column">
-            <Header1> The Untold Story </Header1>
+            <Header1> <b>The Untold Story</b> </Header1>
             <br />
             <p
               style={{
@@ -87,7 +87,7 @@ const Content = () => {
               }}
             >
               Draupadi is more than a lifestyle brand. It's a tribute to the
-              unspoken identity of the 'tragic heroine'. Just like how there's
+              unspoken identity of the <b>'tragic heroine'</b>. Just like how there's
               more to Draupadi, there's more to Sarees. Our bags and accessories
               are upcycled from sarees and handcrafted by women. We are inspired
               by the kindness and empowerment of Draupadi, and imbibe it to

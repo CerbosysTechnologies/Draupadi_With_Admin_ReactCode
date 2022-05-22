@@ -10,6 +10,7 @@ import "./home.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa";
+import FeaturedProducts from "../featureproduct";
 
 const Home = () => {
   const wishcount = useSelector((state) => state.wishlist).length;
@@ -29,7 +30,8 @@ const Home = () => {
         <Hero />
         <Content />
         <Shop />
-        <Products />        
+        {/* <Products />         */}
+        <FeaturedProducts />
         <Social />
       </div>
     </>
