@@ -1,4 +1,5 @@
 import React from "react";
+import css from"./contain.css"
 import {
   Header,
   ContentBtn,
@@ -95,7 +96,7 @@ const Content = () => {
             </p>
           </div>
           <div className="column">
-            <ContentContainerImg id="cdiv2" src={imagbg2} />
+            <ContentContainerImg id="cdiv2 covr" src={imagbg2} />
           </div>
         </div>
       </div>
