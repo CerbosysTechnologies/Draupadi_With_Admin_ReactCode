@@ -37,3 +37,44 @@
     width: 459px;
     object-fit: cover;
   }
+
+  .flexx {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .roww {
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+  }
+  .imgg1 {
+    height: 500px;
+    width: 709px;
+    object-fit: cover;
+  }
+  .imgg2 {
+    height: 500px;
+    width: 360px;
+    object-fit: cover;
+  }
+  .imgg3 {
+    height: 500px;
+    width: 320px;
+    object-fit: cover;
+  }
+  .imgg4 {
+    height: 500px;
+    width: 529px;
+    object-fit: cover;
+  }
+  .imgg5 {
+    height: 500px;
+    width: 459px;
+    object-fit: cover;
+  }
+

@@ -58,6 +58,7 @@ object-fit:cover;
     padding-left:0px:
     padding-right:0px;
     margin:0;
+    position: relative;
 }
 @media only screen and (max-width:425px) and (min-width:376px){
     width:385px;

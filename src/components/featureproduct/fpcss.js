@@ -38,16 +38,16 @@ justify-content: center;
 margin: 0 auto;`
 
 export const ProductCard = styled.div`
-margin: 0 2 rem;
-min-width: 350px;
+margin:0 -10px;
+min-width: 380px;
+max-height: 590px;
 border-color:#808080;
 padding:20px;
-border-radius:10px;
+border-radius:0px;
 overflow:hidden;
 object-fit:cover;
 @media only screen and (max-width:320px){
     width:280px;
-    height:300px;
     padding-left:0px:
     padding-right:0px;
     margin:0;
@@ -75,9 +75,9 @@ export const ProductImg = styled.img`
 height: 380px;
 width: 380px;
 border-radius:0px;
-box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
--webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
--moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
+box-shadow: 0px 6px 7px 0px rgba(35,35,35,0.34);
+-webkit-box-shadow:  0px 6px 7px 0px rgba(35,35,35,0.34);
+-moz-box-shadow:  0px 6px 7px 0px rgba(35,35,35,0.34);
 
 
 @media only screen and (max-width:320px){
@@ -97,19 +97,19 @@ box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
     width:385px;
 }
 @media only screen and (max-width:1024px) and (min-width:769px){
-    height:405px;
+    height:auto;
     width:385px;
 }
 @media only screen and (max-width:1366px) and (min-width:1024px){
-    height:405px;
+    height:auto;
     width:385px;
 }
 @media only screen and (max-width:1440px) and (min-width:1367px){
-    height:405px;
+    height:auto;
     width:385px;
 }
 @media only screen and (max-width:1920px) and (min-width:1441px){
-    height:405px;
+    height:auto;
     width:385px;
 }
 `
@@ -161,70 +161,3 @@ export const ProductHeader = styled.div`
         height:200px;
         text-align:justify;
     }`    
-
-
-    //For Different Images
-
-export const MyWrapper = styled.div`
-display: flex;`;
-
-    export const Product1 = styled.img`
-    height: 380px;
-    width: 480px;
-    border-radius:0px;
-    box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
-    -webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
-    -moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
-    @media only screen and (max-width:320px){
-        height:300px;
-        width:280px;
-    }
-    @media only screen and (max-width: 375px) and (min-width: 321px){
-        height:355px;
-        width:335px;
-    }
-    @media only screen and (max-width: 425px) and (min-width: 376px){
-        height:405px;
-        width:385px;
-    }
-    @media only screen and (max-width: 768px) and (min-width: 426px){
-        height:405px;
-        width:385px;
-    }
-    @media only screen and (max-width:1024px) and (min-width:769px){
-        height:405px;
-        width:385px;
-    }
-    @media only screen and (max-width:1366px) and (min-width:1024px){
-        height:405px;
-        width:385px;
-    }
-    @media only screen and (max-width:1440px) and (min-width:1367px){
-        height:405px;
-        width:385px;
-    }
-    @media only screen and (max-width:1920px) and (min-width:1441px){
-        height:405px;
-        width:385px;
-        margin: 10px;
-    }
-    
-    `;
-
-    export const Product2 = styled.img`
-    height: 380px;
-    width: 280px;
-    border-radius:0px;
-    box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
-    -webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
-    -moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
-    `;
-
-    export const Product3 = styled.img`
-    height: 380px;
-    width: 380px;
-    border-radius:0px;
-    box-shadow: 0px 2px 2px 0px rgba(35,35,35,0.34);
-    -webkit-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
-    -moz-box-shadow:  0px 2px 2px 0px rgba(35,35,35,0.34);
-    `;
