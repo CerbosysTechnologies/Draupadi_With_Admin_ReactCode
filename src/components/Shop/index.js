@@ -25,6 +25,18 @@ const Shop = () => {
           </strong>
         </ShopBtn> */}
       </Link>
+      <p
+              style={{
+                textAlign: "center",
+                fontFamily: "Amiri,serif",
+                fontSize: 18,
+                color: "#404040",
+                marginTop:"8px"
+              }}
+            >
+              <b>Our exquisite bags are upcycled from sarees and handcrafted by women inspired by the
+              unspoken will and resilience of Draupadi.</b>
+            </p>
     </ShopContainer>
   );
 };
