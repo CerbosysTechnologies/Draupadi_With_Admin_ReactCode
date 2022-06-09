@@ -16,7 +16,7 @@ const ProductItem = (props) => {
   return (
     <>
       <div
-        className=" column is-4"
+        className=" column is-3" //This has to be 3for mobile view.
         style={{
           marginTop: 15,
           marginBottom: -15,
@@ -45,7 +45,7 @@ const ProductItem = (props) => {
             >
               <figure
                 className="image is-16by9"
-                style={{ objectFit: "cover", width: "100%", height:"492px" }}
+                style={{ objectFit: "cover", width: "100%", height:"392px" }}
               >
                 <Link
                   to={{
@@ -56,7 +56,7 @@ const ProductItem = (props) => {
                 >
                   <img
                     src={`https://cerbosys.in:4000${sStr}`}
-                    style={{ width: "100%", height:"510px" }}
+                    style={{ width: "100%", height:"410px" }}
                     alt="Placeholder"
                   />
                 </Link>
