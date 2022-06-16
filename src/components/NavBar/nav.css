@@ -109,7 +109,7 @@
 
 @media (min-width: 768px) {
   .open-sidebar {
-    -webkit-transform: translateX(100%);
+    -webkit-transform: translateX(200%);
     -moz-transform: translateX(200%);
     -ms-transform: translateX(200%);
     -o-transform: translateX(200%);

@@ -119,8 +119,8 @@ const NavBar = (props) => {
         className={`${toggle ? "open-sidebar" : "close-sidebar"}  `}
       >
         <button
-          style={{ backgroundColor: "#e0e0e0", paddingLeft:"90px" }}
-          className="rounded-full "
+          style={{ backgroundColor: "#e0e0e0" }}
+          className="rounded-full"
           onClick={() => {
             if (toggle) {
               setToggle(false);
@@ -129,8 +129,8 @@ const NavBar = (props) => {
             }
           }}
         >
-          {/* <MdOutlineArrowBackIosNew size={22} className="bg-[#e0e0e0]  m-2" /> */}
-          <MdOutlineArrowForwardIos size={22} className="bg-[#e0e0e0]  m-2" />
+          <MdOutlineArrowBackIosNew size={22} className="bg-[#e0e0e0]  m-2" />
+          {/* <MdOutlineArrowForwardIos size={22} className="bg-[#e0e0e0]  m-2 place-content-start" /> */}
         </button>
         {category.map((data, index) => {
           return (
@@ -163,7 +163,7 @@ const NavBar = (props) => {
       </div>
       <div className=" flex w-full justify-between my-auto ">
 
-        <div className="flex justify-between my-auto ">
+        <div className="flex justify-left my-auto ">
         <button
             className="md:hidden hamburger-icon"
             //  className={`${toggle ? "open-sidebar"  : "close-sidebar"}`}
@@ -189,7 +189,7 @@ const NavBar = (props) => {
 
 
         <div
-          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center"
+          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center pl-5"
           // style={{ marginTop: "-50px" }}
           // className="absolute ml-[20px] mr-6 left-0 border-2"
         >
