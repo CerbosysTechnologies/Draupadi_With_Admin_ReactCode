@@ -56,11 +56,11 @@
   position: absolute;
 }
 .close-sidebar {
-  -webkit-transform: translateX(200%);
-  -moz-transform: translateX(200%);
-  -ms-transform: translateX(200%);
-  -o-transform: translateX(200%);
-  transform: translateX(200%);
+  -webkit-transform: translateX(300%);
+  -moz-transform: translateX(300%);
+  -ms-transform: translateX(300%);
+  -o-transform: translateX(300%);
+  transform: translateX(300%);
 }
 
 .navbar-active {
@@ -109,7 +109,7 @@
 
 @media (min-width: 768px) {
   .open-sidebar {
-    -webkit-transform: translateX(200%);
+    -webkit-transform: translateX(100%);
     -moz-transform: translateX(200%);
     -ms-transform: translateX(200%);
     -o-transform: translateX(200%);

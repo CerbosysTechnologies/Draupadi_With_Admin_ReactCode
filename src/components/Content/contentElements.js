@@ -37,9 +37,9 @@ font-size:20px;
 `
 
 export const ContentContainerImg = styled.img`
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
+     width: 400px;
+     height: 442px;
+     border-radius: 50%;
     image:  url(${imagbg2});
     position: relative;
     float:right;
@@ -68,6 +68,7 @@ export const ContentContainerImg = styled.img`
         // top:-10px;
         // right:20px;
     }
+
 `   
 export const Container = styled.div`
 margin:60px;

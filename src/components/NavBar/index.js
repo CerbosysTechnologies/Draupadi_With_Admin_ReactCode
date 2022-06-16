@@ -18,6 +18,7 @@ import { Modal, Button, Space } from "antd";
 import { CgMenu } from "react-icons/cg";
 import "../../component/form.css";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 import authHeaderuser from "../../services/auth-headers";
 import AuthService from "../../services/auth.service";
 import { BiSearchAlt2 } from "react-icons/bi";
@@ -118,7 +119,7 @@ const NavBar = (props) => {
         className={`${toggle ? "open-sidebar" : "close-sidebar"}  `}
       >
         <button
-          style={{ backgroundColor: "#e0e0e0" }}
+          style={{ backgroundColor: "#e0e0e0", paddingLeft:"90px" }}
           className="rounded-full "
           onClick={() => {
             if (toggle) {
@@ -128,7 +129,8 @@ const NavBar = (props) => {
             }
           }}
         >
-          <MdOutlineArrowBackIosNew size={22} className="bg-[#e0e0e0]  m-2" />
+          {/* <MdOutlineArrowBackIosNew size={22} className="bg-[#e0e0e0]  m-2" /> */}
+          <MdOutlineArrowForwardIos size={22} className="bg-[#e0e0e0]  m-2" />
         </button>
         {category.map((data, index) => {
           return (
@@ -160,15 +162,43 @@ const NavBar = (props) => {
         })}
       </div>
       <div className=" flex w-full justify-between my-auto ">
+
+        <div className="flex justify-between my-auto ">
+        <button
+            className="md:hidden hamburger-icon"
+            //  className={`${toggle ? "open-sidebar"  : "close-sidebar"}`}
+            type="button"
+            // onClick={sidetoggle}
+            onClick={() => {
+              if (toggle) {
+                setToggle(false);
+              } else {
+                setToggle(true);
+              }
+            }}
+            // data-toggle="collapse"
+            // data-target="#colNav"
+            // aria-controls="navbarSupportedContent"
+            // aria-expanded="false"
+            // aria-label="Toggle navigation"
+          >
+            <CgMenu size={24} />
+          </button>
+
+        </div>
+
+
         <div
           className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center"
           // style={{ marginTop: "-50px" }}
           // className="absolute ml-[20px] mr-6 left-0 border-2"
         >
+
+          
           <div
             onClick={() => history.push("/")}
             className="my-auto flex justify-center items-center cursor-pointer "
-          >
+          >            
             {/* <img src="/Icons.png" className="w-[100px] flex-1 md:!w-40 object-contain" /> */}
             <img src={Logo} className="w-[100px] flex-1 md:!w-40 object-contain" alt="" />
           </div>
@@ -176,6 +206,8 @@ const NavBar = (props) => {
           {/* {logg}     */}
         </div>
         {/* {data && data.length ? (LinkNav()):('')} */}
+
+        {/*  */}
         <div className="flex justify-around items-center h-[100px]   md:mr-[160px]">
           {/* //--Header-menu */}
           <div className="hidden  md:!inline md:!flex md:!items-center md:justify-between ">
@@ -322,26 +354,7 @@ const NavBar = (props) => {
             </ul>
           </div>
 
-          <button
-            className="md:hidden hamburger-icon "
-            //  className={`${toggle ? "open-sidebar"  : "close-sidebar"}`}
-            type="button"
-            // onClick={sidetoggle}
-            onClick={() => {
-              if (toggle) {
-                setToggle(false);
-              } else {
-                setToggle(true);
-              }
-            }}
-            // data-toggle="collapse"
-            // data-target="#colNav"
-            // aria-controls="navbarSupportedContent"
-            // aria-expanded="false"
-            // aria-label="Toggle navigation"
-          >
-            <CgMenu size={24} />
-          </button>
+         
         </div>
       </div>
       <Modal
