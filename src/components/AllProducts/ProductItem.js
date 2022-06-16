@@ -45,7 +45,7 @@ const ProductItem = (props) => {
             >
               <figure
                 className="image is-16by9"
-                style={{ objectFit: "cover", width: "100%", height:"392px" }}
+                style={{ objectFit: "cover", width: "100%", height:"292px" }}
               >
                 <Link
                   to={{
@@ -56,7 +56,7 @@ const ProductItem = (props) => {
                 >
                   <img
                     src={`https://cerbosys.in:4000${sStr}`}
-                    style={{ width: "100%", height:"410px" }}
+                    style={{ width: "100%", height:"320px" }}
                     alt="Placeholder"
                   />
                 </Link>
