@@ -189,7 +189,7 @@ const NavBar = (props) => {
 
 
         <div
-          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center pl-5"
+          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center"
           // style={{ marginTop: "-50px" }}
           // className="absolute ml-[20px] mr-6 left-0 border-2"
         >
@@ -200,7 +200,7 @@ const NavBar = (props) => {
             className="my-auto flex justify-center items-center cursor-pointer "
           >            
             {/* <img src="/Icons.png" className="w-[100px] flex-1 md:!w-40 object-contain" /> */}
-            <img src={Logo} className="w-[100px] flex-1 md:!w-40 object-contain" alt="" />
+            <img src={Logo} className="w-[100px] flex-1 md:!w-40 object-contain mobile-logo-space" alt="" />
           </div>
 
           {/* {logg}     */}

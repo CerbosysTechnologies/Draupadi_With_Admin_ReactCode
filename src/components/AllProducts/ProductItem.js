@@ -16,7 +16,7 @@ const ProductItem = (props) => {
   return (
     <>
       <div
-        className=" column is-3" //This has to be 3for mobile view.
+        className=" column is-3 is-12-mobile" //This has to be 3for mobile view.
         style={{
           marginTop: 15,
           marginBottom: -15,

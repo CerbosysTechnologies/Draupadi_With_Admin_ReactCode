@@ -76,8 +76,10 @@ const ProductList = (props) => {
                         </div>
                         <div className="col">
                           <div className="container">
+                            {/* Changes Done */}
                             <div className="column columns is-multiline min-screen-degine">
-                            <div className="columns is-multiline">
+                            {/* <div className="column columns is-multiline min-screen-degine"> */}
+                            {/* <div className="mobile-display"> */}
                               {products && products.length ? (
                                 products
                                   .filter(
@@ -114,7 +116,7 @@ const ProductList = (props) => {
                                   </span>
                                 </div>
                               )}
-</div>
+{/* </div> */}
                             </div> {/* is multiline finish */}
                           </div>
                         </div>

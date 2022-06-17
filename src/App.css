@@ -67,10 +67,6 @@ body {
 
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-
-
-
-
 }
 
 .mainwindow {
@@ -128,5 +124,25 @@ body {
   a {
     text-decoration: none;
     color: black;
+  }
+}
+
+@media (min-width: 195px) and (max-width:767px){
+  #mobile_sidemenu {
+    width: 35%;
+    height: auto;
+    z-index: 20;
+    position: fixed;
+    left: auto; 
+    right: 170%;
+    background: #e0e0e0;
+    box-shadow: -5px 5px 60px #bebebe, 5px -5px 60px #ffffff;
+    top:75px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .mobile-logo-space{
+    margin-left: 65px;
   }
 }
