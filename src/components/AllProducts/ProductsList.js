@@ -61,6 +61,7 @@ const ProductList = (props) => {
                               color: "#000000",
                               fontSize: 18,
                               fontWeight: 600,
+                              margin:"20px"
                             }}
                           >
                             <medium
