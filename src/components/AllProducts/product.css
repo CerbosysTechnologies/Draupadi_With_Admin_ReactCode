@@ -74,6 +74,30 @@ p>ul>li{
   border-bottom-width: 0px !important;
 }
 
+#img-size{
+  width: 100%; 
+  height: 310px;
+}
+.figure-size{
+  width: 100%;
+  height: 290px;
+  padding-bottom: -10px;
+  object-fit: cover;
+}
+.productname{
+  font-size: 18px;
+  color: black;
+}
+.productprice{
+  font-size: 18px;
+  color: black;
+}
+#differentview{
+  margin-top: 25px;
+  margin-bottom: -5px;
+  background-color:  "transparent";
+}
+
 @media (min-width: 300px) and (max-width: 374px) {
   .choose-degine-box {
     width: 150px;
@@ -108,6 +132,32 @@ p>ul>li{
   .product-img {
     margin-left: -100px;
   }
+  .productname{
+    font-size: 12px;
+    color: black;
+  }
+  .productprice{
+    font-size: 12px;
+    color: black;
+    margin-top: -10px;
+  }
+   
+#img-size{
+  width: 100%; 
+  height: 150px;
+} 
+  .figure-size{   
+    width: 100%;
+    height: 130px; 
+    object-fit: cover;
+  }
+
+  #differentview{
+    margin-top: -5px;
+    margin-bottom: -2px;
+    background-color:  "transparent";
+  }
+
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -131,6 +181,36 @@ p>ul>li{
   .product-img {
     margin-left: -50px;
   }
+
+  .productname{
+    font-size: 13px;
+    color: black;
+  }
+  .productprice{
+    font-size: 13px;
+    color: black;
+  }
+   
+#img-size{
+  width: 100%; 
+  height: 160px;
+} 
+  .figure-size{   
+    width: 100%;
+    height: 140px; 
+    object-fit: cover;
+  }
+
+  #differentview{
+    margin-top: -5px;
+    margin-bottom: -2px;
+    background-color:  "transparent";
+  }
+
+
+
+
+
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
@@ -155,10 +235,41 @@ p>ul>li{
     margin-left: -50px;
   }
 
+  .productname{
+    font-size: 14px;
+    color: black;
+  }
+  .productprice{
+    font-size: 14px;
+    color: black;
+  }
+   
+#img-size{
+  width: 100%; 
+  height: 160px;
+} 
+  .figure-size{   
+    width: 100%;
+    height: 140px; 
+    object-fit: cover;
+  }
+
+  #differentview{
+    margin-top: -5px;
+    margin-bottom: -2px;
+    background-color:  "transparent";
+  }
+
+
+
+
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .min-device-getproduct {
     display: grid;
   }
+
+
 }

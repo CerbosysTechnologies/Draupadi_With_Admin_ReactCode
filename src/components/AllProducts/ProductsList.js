@@ -77,7 +77,7 @@ const ProductList = (props) => {
                         <div className="col">
                           <div className="container">
                             {/* Changes Done */}
-                            <div className="column columns is-multiline min-screen-degine">
+                            <div className="columns is-multiline is-mobile min-screen-degine">
                             {/* <div className="column columns is-multiline min-screen-degine"> */}
                             {/* <div className="mobile-display"> */}
                               {products && products.length ? (

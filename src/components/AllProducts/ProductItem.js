@@ -16,15 +16,17 @@ const ProductItem = (props) => {
   return (
     <>
       <div
-        className=" column is-3 is-12-mobile" //This has to be 3for mobile view.
-        style={{
-          marginTop: 15,
-          marginBottom: -15,
-          backgroundColor: "transparent",
-        }}
+        id="differentview"
+        className="column is-half-mobile is-one-third-tablet is-one-fourth-desktop is-one-fifth-widescreen" //This has to be 3for mobile view.
+        // style={{
+        //   marginTop: 25,
+        //   marginBottom: -15,         
+        //   backgroundColor: "transparent",
+        // }}
       >
         <div
-          className="box flex flex-col justify-center space-y-1 mx-auto h-auto"
+          //className="box flex flex-col justify-center space-y-1 mx-auto h-auto"
+          className="space-y-2 mx-auto"
           style={{ backgroundColor: "transparent" }}
           Style="outline: none;box-shadow: none;"
         >
@@ -44,8 +46,8 @@ const ProductItem = (props) => {
 -moz-box-shadow: 0px 3px 6px #23232300;"
             >
               <figure
-                className="image is-16by9"
-                style={{ objectFit: "cover", width: "100%", height:"292px" }}
+                className="image is-16by9 figure-size"
+               // style={{ objectFit: "cover"}}
               >
                 <Link
                   to={{
@@ -54,9 +56,9 @@ const ProductItem = (props) => {
                   }}
                   onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
                 >
-                  <img
-                    src={`https://cerbosys.in:4000${sStr}`}
-                    style={{ width: "100%", height:"320px" }}
+                  <img id="img-size"
+                  //style={{ width: "100%", height:"320px" }}
+                    src={`https://cerbosys.in:4000${sStr}`}                   
                     alt="Placeholder"
                   />
                 </Link>
@@ -64,7 +66,9 @@ const ProductItem = (props) => {
             </div>
           </div>
           <div className="container" Style="text-align:center;">
-            <h8 className="title" style={{ fontSize: 18, color: "black"}}>
+            <h8 className="title productname" 
+            //style={{ fontSize: 18, color: "black"}}
+            >
               <strong className="flex justify-center">
                 {/* {product.product_name.toUpperCase()} */}
                 {product.product_name}
@@ -73,10 +77,12 @@ const ProductItem = (props) => {
           </div>
           <div className="flex justify-center">
             <span
-              className="text-xl ml-1"
-              style={{ fontSize: 18, color: "black" }}
+              //className="text-xl ml-1"
+              //style={{ fontSize: 18, color: "black" }}
             >
-              <strong style={{ fontSize: 18, color: "black" }}>
+              <strong className="productprice"
+              //style={{ fontSize: 18, color: "black" }}
+              >
                 ₹ {product.product_price}
               </strong>
             </span>
