@@ -62,131 +62,263 @@ const FeaturedMoneyContainer = styled.div`
 
 
 export default function Profile(props) {
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const user = useSelector((state) => state.user);
 
-    if (user.token == undefined) {
-        history.push("/");
-    }
+  if (user.token == undefined) {
+      history.push("/");
+  }
 
-    return (
-        <>
-            <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
-            <div className="container !!flex-col  md:!flex">
-                <div
-                    className="container"
-                    style={{ display: "flex", flexDirection: "column" }}>
-                    <FeaturedTitle>
-                        <strong>My Account</strong>
-                    </FeaturedTitle>
+  return (
+      <>
+          <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
 
+          <div className="container !!flex-col  md:!flex">
+              <div
+                  className="container">
+                    
+                  <FeaturedTitle>
+                      <strong>My Account</strong>
+                  </FeaturedTitle>
+                  
+                  <FeaturedDiv>
+                {/* Image and content div */} 
+                  <div className="container mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+                    
+                    
+                              <img src={wave} alt="DP" id="wave-class"></img>
+                              <span className="matter-class" >
+                                She was born out of the fire. With lotus eyes, dense hair, and convex nails, 
+                                she was as mystical as beautiful. An economist by choice, valiant empress, 
+                                an outspoken, opinionated, and fearless warrior. She was anything but a 'tragic heroine'.
+                              </span>
+                              
+                    </div>
+                  </div>{/* Image and content div ends */}
+</FeaturedDiv>
+                  
+                    
+                      {/* Three Boxes Start */}
+                      <div className="threeBoxContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5">
+                      {/* Address Box */}
+                      <div
+                          className="container inner-container"
+                          style={{ maxWidth: "260px", maxHeight: "260px" }}
+                      >
+                          <FeaturedItem className="feature-item">
+                              <FeaturedMoneyContainer className="edit-info-div">
+                                  <Link
+                                      to="/address"
+                                      style={{ color: "black", position: "relative", textDecoration: "none" }}>
+                                      <img src={edit} className="edit-user"
+                                          style={{ width: "50px", height: "50px", marginLeft: "46px", marginBottom:"10px" }} />
 
-                    <FeaturedDiv className="main-container"
-                        style={{ display: "flex", flexDirection: "column" }}>
-                        {/* Image and content div */}
-                        <div className="container"
-                            style={{ display: "flex", flexDirection: "row", height: "280px", marginTop: "50px" }}>
-                            <div className="grid grid-cols-3">
-                                <img src={wave} alt="DP" className="col-span-1"
-                                    style={{
-                                        width: "300px", height: "100px",
-                                        position: "relative", justifyContent: "center",
-                                        marginLeft: "60px"
-                                    }}></img>
-                                <span className="col-span-2" style={{ marginTop: "50px", marginLeft: "20px", fontSize: "20px" }}>
-                                    She was born out of the fire. With lotus eyes, dense hair, and convex nails, she was as mystical as beautiful. An economist by choice, valiant empress, an outspoken, opinionated, and fearless warrior. She was anything but a 'tragic heroine'.</span>
+                                      <FeaturedTitle1 className="edit-info-div">
+                                          <strong>Modify Your Address</strong>
+                                      </FeaturedTitle1>
+                                  </Link>
+                              </FeaturedMoneyContainer>
 
-                            </div>
+                          </FeaturedItem>
+                      </div>
+                      {/* Address Box Ends*/}
 
-                        </div> {/* Image and content div ends */}
+                      {/* Orders Box Start */}
+                      <div
+            className="container"
+            style={{ maxWidth: 260, maxHeight: 260 }}>
+            <FeaturedItem className="feature-item">
+              <FeaturedMoneyContainer className="edit-info-div">
+                <Link
+                  to="/yourorders"
+                  style={{ color: "#BA7D82", position: "relative" }}
+                  className="last-order">
+                  <img src={loc} style={{ width: "50px", height: "50px", marginLeft: "1px", marginBottom:"10px" }}/>
+                  {/* </div> */}
+                </Link>
+              </FeaturedMoneyContainer>
+              <FeaturedTitle1 className="edit-info-div">
+                <strong>View Your Last Orders</strong>
+              </FeaturedTitle1>
+            </FeaturedItem>
+          </div>
+          {/* Orders Box End */}
 
-                        {/* Three Boxes Start */}
-                        <div className="threeBoxContainer grid grid-cols-3">
-                        {/* Address Box */}
-                        <div
-                            className="container inner-container"
-                            style={{ maxWidth: "260px", maxHeight: "260px" }}
-                        >
-                            <FeaturedItem className="feature-item">
-                                <FeaturedMoneyContainer className="edit-info-div">
-                                    <Link
-                                        to="/address"
-                                        style={{ color: "black", position: "relative", textDecoration: "none" }}>
-                                        <img src={edit} className="edit-user"
-                                            style={{ width: "50px", height: "50px", marginLeft: "46px", marginBottom:"10px" }} />
+          {/* Logout Box */}
 
-                                        <FeaturedTitle1 className="edit-info-div">
-                                            <strong>Modify Your Address</strong>
-                                        </FeaturedTitle1>
-                                    </Link>
-                                </FeaturedMoneyContainer>
-
-                            </FeaturedItem>
-                        </div>
-                        {/* Address Box Ends*/}
-
-                        {/* Orders Box Start */}
-                        <div
-              className="container"
-              style={{ maxWidth: 260, maxHeight: 260 }}>
-              <FeaturedItem className="feature-item">
-                <FeaturedMoneyContainer className="edit-info-div">
-                  <Link
-                    to="/yourorders"
-                    style={{ color: "#BA7D82", position: "relative" }}
-                    className="last-order">
-                    <img src={loc} style={{ width: "50px", height: "50px", marginLeft: "1px", marginBottom:"10px" }}/>
-                    {/* </div> */}
-                  </Link>
-                </FeaturedMoneyContainer>
-                <FeaturedTitle1 className="edit-info-div">
-                  <strong>View Your Last Orders</strong>
-                </FeaturedTitle1>
-              </FeaturedItem>
-            </div>
-            {/* Orders Box End */}
-
-            {/* Logout Box */}
-
-            <div
-              className="container inner-container"
-              style={{ maxWidth: "260px", maxHeight: "260px" }}
-            >
-              <FeaturedItem className="feature-item">
-                <FeaturedMoneyContainer className="edit-info-div">
-                  <Link
-                    to="/"
-                    style={{ color: "#BA7D82", position: "relative" }}
-                  >
-                    <img
-                      className="limgo"
-                      src={logout}
-                      style={{ width: "50px", height: "50px", marginLeft: "1px", marginBottom:"10px"}}
-                      onClick={() => {
-                        dispatch({ type: "LOGOUT_USER" });
-                        dispatch({ type: "CLEAR_CART" });
-                        dispatch({ type: "CLEAR_WISHLIST" });
-                      }}/>
-                  </Link>
-                </FeaturedMoneyContainer>
-                <FeaturedTitle1 className="edit-info-div">
-                  <strong>Logout</strong>
-                </FeaturedTitle1>
-              </FeaturedItem>
-            </div>
-
+          <div
+            className="container inner-container"
+            style={{ maxWidth: "260px", maxHeight: "260px" }}
+          >
+            <FeaturedItem className="feature-item">
+              <FeaturedMoneyContainer className="edit-info-div">
+                <Link
+                  to="/"
+                  style={{ color: "#BA7D82", position: "relative" }}
+                >
+                  <img
+                    className="limgo"
+                    src={logout}
+                    style={{ width: "50px", height: "50px", marginLeft: "1px", marginBottom:"10px"}}
+                    onClick={() => {
+                      dispatch({ type: "LOGOUT_USER" });
+                      dispatch({ type: "CLEAR_CART" });
+                      dispatch({ type: "CLEAR_WISHLIST" });
+                    }}/>
+                </Link>
+              </FeaturedMoneyContainer>
+              <FeaturedTitle1 className="edit-info-div">
+                <strong>Logout</strong>
+              </FeaturedTitle1>
+            </FeaturedItem>
+          </div>
 
 
-            {/* Logout Box Ends*/}
-                        </div>
-                        {/* Three Boxes End */}
-                        
-                    </FeaturedDiv>
 
-                </div>
-            </div>
-        </>
-    );
+          {/* Logout Box Ends*/}
+                      </div>
+                      {/* Three Boxes End */}
+                      
+                  
+
+              </div>
+          </div>
+      </>
+  );
 
 }
+
+
+
+
+// export default function Profile(props) {
+//     const dispatch = useDispatch();
+//     const history = useHistory();
+//     const user = useSelector((state) => state.user);
+
+//     if (user.token == undefined) {
+//         history.push("/");
+//     }
+
+//     return (
+//         <>
+//             <a href='https://wa.me/+916396173148' target="_blank"><WhatsappLogo>{whats}</WhatsappLogo></a>
+//             <div className="container !!flex-col  md:!flex">
+//                 <div
+//                     className="container"
+//                     style={{ display: "flex", flexDirection: "column" }}>
+//                     <FeaturedTitle>
+//                         <strong>My Account</strong>
+//                     </FeaturedTitle>
+
+
+//                     <FeaturedDiv className="main-container"
+//                         style={{ display: "flex", flexDirection: "column" }}>
+//                         {/* Image and content div */}
+//                         <div className="container"
+//                             style={{ display: "flex", flexDirection: "row", height: "280px", marginTop: "50px" }}>
+//                             <div className="grid grid-cols-3">
+//                                 <img src={wave} alt="DP" className="col-span-1"
+//                                     style={{
+//                                         width: "300px", height: "100px",
+//                                         position: "relative", justifyContent: "center",
+//                                         marginLeft: "60px"
+//                                     }}></img>
+//                                 <span className="col-span-2" style={{ marginTop: "50px", marginLeft: "20px", fontSize: "20px" }}>
+//                                     She was born out of the fire. With lotus eyes, dense hair, and convex nails, she was as mystical as beautiful. An economist by choice, valiant empress, an outspoken, opinionated, and fearless warrior. She was anything but a 'tragic heroine'.</span>
+
+//                             </div>
+
+//                         </div> {/* Image and content div ends */}
+
+//                         {/* Three Boxes Start */}
+//                         <div className="threeBoxContainer grid grid-cols-3">
+//                         {/* Address Box */}
+//                         <div
+//                             className="container inner-container"
+//                             style={{ maxWidth: "260px", maxHeight: "260px" }}
+//                         >
+//                             <FeaturedItem className="feature-item">
+//                                 <FeaturedMoneyContainer className="edit-info-div">
+//                                     <Link
+//                                         to="/address"
+//                                         style={{ color: "black", position: "relative", textDecoration: "none" }}>
+//                                         <img src={edit} className="edit-user"
+//                                             style={{ width: "50px", height: "50px", marginLeft: "46px", marginBottom:"10px" }} />
+
+//                                         <FeaturedTitle1 className="edit-info-div">
+//                                             <strong>Modify Your Address</strong>
+//                                         </FeaturedTitle1>
+//                                     </Link>
+//                                 </FeaturedMoneyContainer>
+
+//                             </FeaturedItem>
+//                         </div>
+//                         {/* Address Box Ends*/}
+
+//                         {/* Orders Box Start */}
+//                         <div
+//               className="container"
+//               style={{ maxWidth: 260, maxHeight: 260 }}>
+//               <FeaturedItem className="feature-item">
+//                 <FeaturedMoneyContainer className="edit-info-div">
+//                   <Link
+//                     to="/yourorders"
+//                     style={{ color: "#BA7D82", position: "relative" }}
+//                     className="last-order">
+//                     <img src={loc} style={{ width: "50px", height: "50px", marginLeft: "1px", marginBottom:"10px" }}/>
+//                     {/* </div> */}
+//                   </Link>
+//                 </FeaturedMoneyContainer>
+//                 <FeaturedTitle1 className="edit-info-div">
+//                   <strong>View Your Last Orders</strong>
+//                 </FeaturedTitle1>
+//               </FeaturedItem>
+//             </div>
+//             {/* Orders Box End */}
+
+//             {/* Logout Box */}
+
+//             <div
+//               className="container inner-container"
+//               style={{ maxWidth: "260px", maxHeight: "260px" }}
+//             >
+//               <FeaturedItem className="feature-item">
+//                 <FeaturedMoneyContainer className="edit-info-div">
+//                   <Link
+//                     to="/"
+//                     style={{ color: "#BA7D82", position: "relative" }}
+//                   >
+//                     <img
+//                       className="limgo"
+//                       src={logout}
+//                       style={{ width: "50px", height: "50px", marginLeft: "1px", marginBottom:"10px"}}
+//                       onClick={() => {
+//                         dispatch({ type: "LOGOUT_USER" });
+//                         dispatch({ type: "CLEAR_CART" });
+//                         dispatch({ type: "CLEAR_WISHLIST" });
+//                       }}/>
+//                   </Link>
+//                 </FeaturedMoneyContainer>
+//                 <FeaturedTitle1 className="edit-info-div">
+//                   <strong>Logout</strong>
+//                 </FeaturedTitle1>
+//               </FeaturedItem>
+//             </div>
+
+
+
+//             {/* Logout Box Ends*/}
+//                         </div>
+//                         {/* Three Boxes End */}
+                        
+//                     </FeaturedDiv>
+
+//                 </div>
+//             </div>
+//         </>
+//     );
+
+// }
