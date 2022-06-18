@@ -41,6 +41,7 @@ import Search from "./search_icon.svg";
 import Person from "./person_icon_svg.svg";
 import Cart from "./cart_icon_svg.svg";
 import Logo from "./draupadi.svg.svg"
+import Login from "./Login.svg"
 var scrollToElement = require("scroll-to-element");
 const NavBar = (props) => {
   const [visible, setVisible] = useState(false);
@@ -189,8 +190,9 @@ const NavBar = (props) => {
 
 
         <div
-          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center"
-          // style={{ marginTop: "-50px" }}
+          //className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center"
+          className=" lg:ml-[10px] !max-w-screen  flex flex-1 items-center justify-center" //new change for logo
+          //  style={{ marginLeft: "-0px" }}
           // className="absolute ml-[20px] mr-6 left-0 border-2"
         >
 
@@ -208,7 +210,7 @@ const NavBar = (props) => {
         {/* {data && data.length ? (LinkNav()):('')} */}
 
         {/*  */}
-        <div className="flex justify-around items-center h-[100px]   md:mr-[160px]">
+        <div className="flex justify-around items-center h-[100px]   md:mr-[120px]">
           {/* //--Header-menu */}
           <div className="hidden  md:!inline md:!flex md:!items-center md:justify-between ">
             {category.map((data, index) => {
@@ -294,14 +296,16 @@ const NavBar = (props) => {
                         {/* <FaUser size={20} className="cursor-pointer mr-4" /> */}
                         <img src={Person} alt="" width={16}  height={16} 
                         style={{
-                          marginRight: 22
+                          marginRight: 15
                         }}/>
                       </NavLink> 
                     ) : (
                       <NavLink
                         to="/login"
                         className="cursor-pointer no-underline mr-4">
-                        Login
+                        {/* Login This is nor required in mobile view*/}
+                        <img src={Login} alt="" width={16} height={16}
+                        style={{}}></img>
                       </NavLink>
                     )}
                   </strong>

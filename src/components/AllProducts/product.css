@@ -144,12 +144,17 @@ p>ul>li{
    
 #img-size{
   width: 100%; 
-  height: 150px;
+  height: 132px;
+  /* image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated; 
+  image-rendering: -webkit-optimize-contrast;*/
 } 
   .figure-size{   
     width: 100%;
     height: 130px; 
-    object-fit: cover;
+    object-fit: cover; 
+    /*image-rendering: -webkit-optimize-contrast;*/
   }
 
   #differentview{
@@ -193,12 +198,13 @@ p>ul>li{
    
 #img-size{
   width: 100%; 
-  height: 160px;
+  height: 147px;
 } 
   .figure-size{   
     width: 100%;
-    height: 140px; 
+    height: 145px; 
     object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
   }
 
   #differentview{
@@ -246,12 +252,13 @@ p>ul>li{
    
 #img-size{
   width: 100%; 
-  height: 160px;
+  height: 141px;
 } 
   .figure-size{   
     width: 100%;
     height: 140px; 
     object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
   }
 
   #differentview{
@@ -270,6 +277,15 @@ p>ul>li{
   .min-device-getproduct {
     display: grid;
   }
-
+  #img-size{
+    width: 100%; 
+    height: 160px;
+  } 
+    .figure-size{   
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      image-rendering: -webkit-optimize-contrast;
+    }
 
 }
