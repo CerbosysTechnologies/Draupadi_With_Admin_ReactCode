@@ -117,7 +117,9 @@ const NavBar = (props) => {
           fontWeight: "700",
           transition: "transform 0.5s",
         }}
-        className={`${toggle ? "open-sidebar" : "close-sidebar"}  `}
+        //className={`${toggle ? "open-sidebar" : "close-sidebar"}  `
+        className={`${toggle ? "close-sidebar" : "open-sidebar"}  `
+      }
       >
         <button
           style={{ backgroundColor: "#e0e0e0" }}

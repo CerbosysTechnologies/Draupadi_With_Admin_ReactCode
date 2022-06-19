@@ -17,7 +17,8 @@ const ProductItem = (props) => {
     <>
       <div
         id="differentview"
-        className="column is-half-mobile is-one-third-tablet is-one-fourth-desktop is-one-fifth-widescreen" //This has to be 3for mobile view.
+        className="column is-half-mobile is-one-third-tablet is-one-fourth-desktop 
+        is-one-sixth-widescreen" //This has to be 3for mobile view.
         // style={{
         //   marginTop: 25,
         //   marginBottom: -15,         
@@ -31,22 +32,22 @@ const ProductItem = (props) => {
           Style="outline: none;box-shadow: none;"
         >
           <div
-            className="card"
+            className="card-1" //Names Changed for edges previously it was card
             style={{
-              borderRadius: "25px",
+              //borderRadius: "25px",
               overflow: "hidden",
               outline: "none",
               backgroundColor: "transparent",
             }}
           >
             <div
-              className="card-image"
-              Style="box-shadow: 0px 3px 6px #23232300;
--webkit-box-shadow: 0px 3px 6px #23232300;
--moz-box-shadow: 0px 3px 6px #23232300;"
+              className="card-image-1" ////Names Changed for edges previously it was card-image
+//               Style="box-shadow: 0px 3px 6px #23232300;
+// -webkit-box-shadow: 0px 3px 6px #23232300;
+// -moz-box-shadow: 0px 3px 6px #23232300;"
             >
               <figure
-                className="image is-16by9 figure-size"
+                className="image is-by1 figure-size"
                // style={{ objectFit: "cover"}}
               >
                 <Link
