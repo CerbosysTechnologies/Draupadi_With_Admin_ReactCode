@@ -28,7 +28,7 @@ const ProductItem = (props) => {
       >
         <div
           //className="box flex flex-col justify-center space-y-1 mx-auto h-auto"
-          className="space-y-2 mx-auto"
+          className="space-y-3 mx-auto"
           style={{ backgroundColor: "transparent" }}
           Style="outline: none;box-shadow: none;"
         >
@@ -48,7 +48,7 @@ const ProductItem = (props) => {
 // -moz-box-shadow: 0px 3px 6px #23232300;"
             >
               <figure
-                className="image is-by1 figure-size"
+                className="image is-5by4 figure-size"
                // style={{ objectFit: "cover"}}
               >
                 <Link

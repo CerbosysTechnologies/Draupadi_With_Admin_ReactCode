@@ -76,13 +76,14 @@ p>ul>li{
 
 #img-size{
   width: 100%; 
-  height: 310px;
+  height: 330px;
 }
 .figure-size{
   width: 100%;
   height: 320px;
   padding-bottom: -10px;
   object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
 }
 .productname{
   font-size: 18px;
@@ -135,6 +136,7 @@ p>ul>li{
   .productname{
     font-size: 12px;
     color: black;
+    margin-top: -20px;
   }
   .productprice{
     font-size: 12px;
@@ -144,7 +146,8 @@ p>ul>li{
    
 #img-size{
   width: 100%; 
-  height: 132px;
+  /* height: 132px; */
+  height: 160px;
   /* image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated; 
@@ -152,7 +155,8 @@ p>ul>li{
 } 
   .figure-size{   
     width: 100%;
-    height: 130px; 
+    /* height: 130px;  */
+    height: 160px; 
     object-fit: cover; 
     /*image-rendering: -webkit-optimize-contrast;*/
   }
@@ -198,11 +202,13 @@ p>ul>li{
    
 #img-size{
   width: 100%; 
-  height: 147px;
+  /* height: 147px; */
+  height: 165px;
 } 
   .figure-size{   
     width: 100%;
-    height: 145px; 
+    /* height: 145px;  */
+    height: 165px; 
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
   }
@@ -252,11 +258,13 @@ p>ul>li{
    
 #img-size{
   width: 100%; 
-  height: 141px;
+  /* height: 141px; */
+  height: 178px;
 } 
   .figure-size{   
     width: 100%;
-    height: 140px; 
+    /* height: 140px;  */
+    height: 160px; 
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
   }
@@ -279,11 +287,11 @@ p>ul>li{
   }
   #img-size{
     width: 100%; 
-    height: 160px;
+    height: 182px;
   } 
     .figure-size{   
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
       image-rendering: -webkit-optimize-contrast;
     }
