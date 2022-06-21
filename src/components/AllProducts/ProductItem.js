@@ -17,6 +17,7 @@ const ProductItem = (props) => {
     <>
       <div
         id="differentview"
+        //className="column is-half-mobile is-one-third-tablet is-one-fourth-desktop is-one-fifth-widescreen"
         className="column is-half-mobile is-one-third-tablet is-one-fourth-desktop 
         is-one-sixth-widescreen" //This has to be 3for mobile view.
         // style={{
