@@ -259,7 +259,7 @@ const Pcategory = (props) => {
         Style="position:relative;margin-top:40px;"
       >
         <img
-          className="rounded-md object-contain h-[500px] inline"
+          className="rounded-md object-contain h-[500px] inline my-6"
           //https://img.starbiz.com/resize/750x-/2020/02/11/amber-heard-2a66.jpg
           src={`https://cerbosys.in:4000${product?.product_image?.substr(8)}`}
           // src="https://img.starbiz.com/resize/750x-/2020/02/11/amber-heard-2a66.jpg"
@@ -780,7 +780,8 @@ const Pcategory = (props) => {
                     <ul>
                       {/* <li>
                         {product.product_description}</li> */}
-                        {desc.map((line)=>{return <li>{line}</li>})}
+                        {desc.map((line)=>
+                          {return <li>{line}</li>})}
                     </ul>
                     {/* {product.product_description} */}
                   </p>

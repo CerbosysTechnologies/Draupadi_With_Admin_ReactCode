@@ -28,8 +28,8 @@ const ProductItem = (props) => {
       >
         <div
           //className="box flex flex-col justify-center space-y-1 mx-auto h-auto"
-          className="space-y-3 mx-auto"
-          style={{ backgroundColor: "transparent" }}
+          className="space-y-3 mx-auto  "
+          style={{ backgroundColor: "transparent"  }}
           Style="outline: none;box-shadow: none;"
         >
           <div
@@ -39,16 +39,18 @@ const ProductItem = (props) => {
               overflow: "hidden",
               outline: "none",
               backgroundColor: "transparent",
+              
             }}
           >
             <div
-              className="card-image-1" ////Names Changed for edges previously it was card-image
+              className="card-image-1 sm:h-52 md:h-96"  ////Names Changed for edges previously it was card-image
+              //style={{height:"500px"}}
 //               Style="box-shadow: 0px 3px 6px #23232300;
 // -webkit-box-shadow: 0px 3px 6px #23232300;
 // -moz-box-shadow: 0px 3px 6px #23232300;"
             >
               <figure
-                className="image is-5by4 figure-size"
+                className="figure-size"
                // style={{ objectFit: "cover"}}
               >
                 <Link
@@ -58,7 +60,7 @@ const ProductItem = (props) => {
                   }}
                   onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
                 >
-                  <img id="img-size"
+                  <img id="img-size" 
                   //style={{ width: "100%", height:"320px" }}
                     src={`https://cerbosys.in:4000${sStr}`}                   
                     alt="Placeholder"
