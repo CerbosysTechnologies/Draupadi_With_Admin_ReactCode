@@ -643,7 +643,7 @@ const Pcategory = (props) => {
                       className=" p-2"
                       Style="background-color:#000000;color:white;border-radius:0px;height:40px;width:150px;"
                     >
-                      <strong style={{ color: "white",fontSize:'16px',fontWeight:'100' }}> ADD TO CART</strong>
+                      <strong style={{ color: "white",fontSize:'16px',fontWeight:'100' }}> Add To Cart</strong>
                     </button>
                     <span>
                       {wishlistStatus ? (

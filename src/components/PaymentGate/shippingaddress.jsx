@@ -153,7 +153,8 @@ const Ships = () => {
   formData.append("city", city);
   formData.append("postalcode", zip);
   formData.append("mobilenumber", mobile);
-  formData.append("address_type", addresstype);
+  //formData.append("address_type", addresstype);
+  formData.append("address_type", "Home");
 
   const addUpdateAddress = async (e) => {
     e.preventDefault();
@@ -397,7 +398,7 @@ const Ships = () => {
                       Please provide a valid landmark.
                     </Form.Control.Feedback>
                   </Form.Group>
-                  <Form.Group as={Col} md="3" controlId="validationCustom23">
+                  {/* <Form.Group as={Col} md="3" controlId="validationCustom23">
                     <Form.Label>Address Type</Form.Label>
                     <Form.Control
                       type="text"
@@ -409,7 +410,7 @@ const Ships = () => {
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid address type.
                     </Form.Control.Feedback>
-                  </Form.Group>
+                  </Form.Group> */}
                   <Form.Group as={Col} md="3" controlId="validationCustom11">
                     <Form.Control
                       type="hidden"

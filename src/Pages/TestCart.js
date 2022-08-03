@@ -847,7 +847,7 @@ function TestCart() {
             />
           </Form.Item>
 
-          <Form.Item
+          {/* <Form.Item
             name="address_type"
             rules={[
               {
@@ -867,7 +867,7 @@ function TestCart() {
               value={addresstype}
               onChange={(e) => setAddresstype(e.target.value)}
             />
-          </Form.Item>
+          </Form.Item> */}
 
           {/* <span className="flex  space-x-2">
             <input type="checkbox" className="checked:bg-red-700 " />
