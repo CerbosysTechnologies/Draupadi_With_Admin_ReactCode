@@ -245,7 +245,7 @@ const Cart = (props) => {
                     )
                     .then((response) => {
                       console.log("Response", response.data.id);
-                      var idd = response.data;
+                      //var idd = response.data;
                       dispatch({ type: "CLEAR_CART" });
                       // toast(
                       //   `Order has placed successfully, you will receive tracking details shortly 🥰😍 `,
