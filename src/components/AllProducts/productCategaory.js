@@ -680,7 +680,7 @@ const Pcategory = (props) => {
                               }}
                             />
                           </span>
-                          <span style={{fontWeight:'100', color:"black"}} >ADD TO WISHLIST</span>
+                          <span style={{fontWeight:'100', color:"black"}} >Add To Wishlist</span>
                         </div>
                       ) : (
                         <div
@@ -730,7 +730,7 @@ const Pcategory = (props) => {
                                 fontWeight:'100',                              }}
                             />
                           </span>
-                          <span style={{fontWeight:'100', color:"black"}}>ADD TO WISHLIST</span>
+                          <span style={{fontWeight:'100', color:"black"}}>Add To Wishlist</span>
                         </div>
                       )}
                     </span>

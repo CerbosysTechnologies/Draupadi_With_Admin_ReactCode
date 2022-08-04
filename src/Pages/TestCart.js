@@ -496,7 +496,7 @@ function TestCart() {
           last_name: lastname,
           address_line1: address1,
           address_line2: address2,
-          landmark: landmark,
+          landmark: "landmark",
           state_name: state,
           city: city,
           postalcode: zip,
@@ -825,7 +825,7 @@ function TestCart() {
             />
           </Form.Item>
 
-          <Form.Item
+          {/* <Form.Item
             name="landmark"
             rules={[
               {
@@ -845,7 +845,7 @@ function TestCart() {
               value={landmark}
               onChange={(e) => setLandmark(e.target.value)}
             />
-          </Form.Item>
+          </Form.Item> */}
 
           {/* <Form.Item
             name="address_type"

@@ -187,7 +187,8 @@ const Footer = () => {
                 <br />
                 <p Style="text-align:left;position:relative;color:#0404040;font-size:14px;font-family:Amiri,serif;">
                   Mon - Sat | 9 AM - 6 PM (IST){" "}
-                </p>
+                
+</p>
                 <a
                   Style="color: #404040;
 display: flex;
@@ -198,12 +199,32 @@ font-family:Amiri,serif;
 font-style: normal;
 font-weight:100%;
 position:relative;
+top:1rem;
 color: #404040;
 justify-content:space-between;"
                   href="tel:+919953730501"
                 >
                   +91 6396173148
                 </a>
+
+                <p
+                  Style="color: #404040;
+display: flex;
+text-decoration: none;
+text-align:left;
+font-size: 14px;
+font-family:Amiri,serif;
+font-style: normal;
+font-weight:100%;
+position:relative;
+color: #404040;
+top:2rem;
+justify-content:space-between;">
+                 SECTOR-5, 1-A, Shri Radhe Valley, NH-2, Mathura, Uttar Pradesh, 281004
+                </p>
+
+
+
                 <a
                   Style="color: #404040;
 display: flex;
@@ -216,6 +237,7 @@ font-style: normal;
 font-weight:100%;
 position:relative;
 left:-15px;
+top:1.5rem;
 justify-content:space-between;"
                   href="mailto:bagsbydraupadi@gmail.com"
                 >
@@ -234,14 +256,14 @@ justify-content:space-between;"
                     textDecoration: "none",
                     color: "blue",
                     fontSize: "21px",
-                    marginTop: "-2px",
+                    marginTop: "1rem",
                   }}
                   href="https://business.facebook.com/BagsByDraupadi/?fref=nf"
                 >
                   <SiFacebook />
                 </a>
                 <a
-                  style={{ textDecoration: "none", fontSize: "18px" }}
+                  style={{ textDecoration: "none", fontSize: "18px", marginTop: "1rem", }}
                   href="https://instagram.com/bagsbydraupadi?utm_medium=copy_link"
                 >
                   {" "}

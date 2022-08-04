@@ -59,16 +59,16 @@ const Ships = () => {
   function selectState(postalcode){
     if(postalcode.length<6  || postalcode.length>6)return;
 
-  let data= axios.get(`https://www.geonames.org/postalCodeLookupJSON?&country=IN&postalcode=${postalcode}`,
+  //let data= axios.get(`https://www.geonames.org/postalCodeLookupJSON?&country=IN&postalcode=${postalcode}`,
+  let data= axios.get(`https://cors-anywhere.herokuapp.com/http://www.postalpincode.in/api/pincode/${postalcode}`,
   
   {
     headers: {
        "Content-Type": "application/json",
-       'Access-Control-Allow-Origin':'*',
-       //"Access-Control-Allow-Methods": "*",
-       //"Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
-       'mode':'cors'
-      //Authorization: `Bearer ${user?.token}`,
+       "Access-Control-Allow-Headers": "*",
+       "Access-Control-Allow-Origin": "*",
+       "Access-Control-Allow-Methods": "*"   ,
+       //'mode':'no-cors'
     },
   }
   
@@ -166,7 +166,7 @@ const Ships = () => {
   formData.append("last_name", lastname);
   formData.append("address_line1", address1);
   formData.append("address_line2", address2);
-  formData.append("landmark", landmark);
+  formData.append("landmark", "landmark");
   formData.append("state_name", state);
   formData.append("city", city);
   formData.append("postalcode", zip);
@@ -405,8 +405,8 @@ const Ships = () => {
                     </Form.Select>
                   </Form.Group>
                 </Row>
-                <Row className="mb-4">
-                  <Form.Group as={Col} md="3" controlId="validationCustom22">
+                 <Row className="mb-4">
+                  {/*<Form.Group as={Col} md="3" controlId="validationCustom22">
                     <Form.Label>Landmark</Form.Label>
                     <Form.Control
                       type="text"
@@ -418,7 +418,7 @@ const Ships = () => {
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid landmark.
                     </Form.Control.Feedback>
-                  </Form.Group>
+                  </Form.Group> */}
                   {/* <Form.Group as={Col} md="3" controlId="validationCustom23">
                     <Form.Label>Address Type</Form.Label>
                     <Form.Control

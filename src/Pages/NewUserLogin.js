@@ -77,7 +77,7 @@ const NewUserLogin = () => {
   formData.append("last_name", lastname);
   formData.append("address_line1", address1);
   formData.append("address_line2", address2);
-  formData.append("landmark", landmark);
+  formData.append("landmark", "landmark");
   formData.append("state_name", state);
   formData.append("city", city);
   formData.append("postalcode", zip);
@@ -325,7 +325,7 @@ const NewUserLogin = () => {
             </Form.Group>
             {/* </Row>
                 <Row className="mb-4"> */}
-            <Form.Group as={Col} md="4" controlId="validationCustom22">
+            {/* <Form.Group as={Col} md="4" controlId="validationCustom22">
               <Form.Control
                 type="text"
                 className="h-10 my-1"
@@ -337,7 +337,7 @@ const NewUserLogin = () => {
               <Form.Control.Feedback type="invalid">
                 Please provide a valid landmark.
               </Form.Control.Feedback>
-            </Form.Group>
+            </Form.Group> */}
             {/* <Form.Group as={Col} md="4" controlId="validationCustom23">
               <Form.Control
                 type="text"

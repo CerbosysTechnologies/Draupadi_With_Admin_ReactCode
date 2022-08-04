@@ -29,8 +29,9 @@ My order has been shipped. Now how can I track it?
 <br/>4.	Ecom Express - http://www.ecomexpress.in/
 <br/>5.	Wow Express - http://www.wowexpress.in/
 <br/>6.	Delhivery - http://www.delhivery.com/
-<br/><br/><b>What is the estimated delivery time?</b>
-<br/>We usually dispatch most orders within 1-4 business days (excluding Sundays and public holidays)<br/>
+<br/><br/>
+<b>What is the estimated delivery time?</b>
+<br/>We usually dispatch most orders within 1-4 business days. Maximum delivery time is 3-4 days outside city and 2 days within city. (excluding Sundays and public holidays)<br/>
 <br/><br/>•	Though, we keep 95% of our catalogue in our inventory, certain products need to be sourced directly from the brand itself so that we can live up to our promise of providing fresh, non-expired products.
 <br/><br/>•	While we are trying our best to avoid this situation, these products might delay your order. However, in case of international orders, product delivery may get delayed due to reasons attributable to logistics, public holidays, etc.
 <br/><br/>•	If you are ordering our products from a Mega Sale event, dispatches may be a bit delayed due to increased volumes. We will target to dispatch all orders within 5 days of order date.
@@ -39,6 +40,20 @@ Don’t worry! This is a completely normal situation. This just means that diffe
 Are there any shipping charges applicable on my order?
 <br/><br/>•	We are not charging any shipping charges additionally. All the product prices shown on the website are inclusive of all.
 <br/><br/>•	We are currently not accepting orders from outside India.
+
+<br/><br/>
+<b>Is there any Refund or Cancellation Policy?</b>
+<br/>
+If you are not 100% satisfied with your purchase, you can return the product and get a full refund or exchange the product for another one, be it similar or not.
+<br /><br/>
+You can return a product for up to 30 days from the date you purchased it.
+<br /><br />
+Any product you return must be in the same condition you received it and in the original packaging. Please keep the receipt.
+<br/><br/>•	No cancellation policy
+<br/><br/>•	Once it can be exchanged
+
+
+
      </div>
         </div>
         </div>

@@ -161,7 +161,7 @@ payment options and recommended to ensure faster processing of
 your order.
 <br/>Cash On Delivery option is not available for orders outside India.
 <br/><br/><b>10. SHIPPING AND DELIVERY</b><br/>
-Please refer to our Shipping and Delivery Policy      provided on our Site, as 
+Please refer to our Shipping and Delivery Policy provided on our Site, as 
 amended from time to time.
 <br/><br/> <b>13. USER CONTENT</b> <br/>
 The information, photo, image, chat communication, text, software, data, 
