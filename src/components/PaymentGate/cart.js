@@ -136,7 +136,6 @@ const Cart = (props) => {
     await axios
       .post(
         "https://cerbosys.in:4000/draupadi/proceedToCheckout",
-
         {
           shiprocket_orderid: "",
           totalAmount: totalPrice,

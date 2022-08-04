@@ -56,13 +56,31 @@ const Ships = () => {
     "West Bengal",
   ];
 
+  function selectState(postalcode){
+    if(postalcode.length<6  || postalcode.length>6)return;
+
+  let data= axios.get(`https://www.geonames.org/postalCodeLookupJSON?&country=IN&postalcode=${postalcode}`,
+  
+  {
+    headers: {
+       "Content-Type": "application/json",
+       'Access-Control-Allow-Origin':'*',
+       //"Access-Control-Allow-Methods": "*",
+       //"Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
+       'mode':'cors'
+      //Authorization: `Bearer ${user?.token}`,
+    },
+  }
+  
+  ).then(res=> console.log(res))
+
+  }
   const user = useSelector((state) => state.user);
 
   useEffect(async () => {
     await axios
       .get(
         "https://cerbosys.in:4000/draupadi/getAllAddress",
-
         {
           headers: {
             // "Content-Type": "application/json",
@@ -360,7 +378,10 @@ const Ships = () => {
                       type="text"
                       // placeholder="Zip"
                       value={zip}
-                      onChange={(e) => setZip(e.target.value)}
+                      onChange={(e) =>{
+                        
+                        selectState(e.target.value)
+                        setZip(e.target.value)}}
                       required
                     />
                     <Form.Control.Feedback type="invalid">
