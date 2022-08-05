@@ -44,7 +44,7 @@ Are there any shipping charges applicable on my order?
 <br/><br/>
 <b>Is there any Refund or Cancellation Policy?</b>
 <br/>
-If you are not 100% satisfied with your purchase, you can return the product and get a full refund or exchange the product for another one, be it similar or not.
+If you are not 100% satisfied with your purchase, you can return the product and get a full refund within 5-6 working days or exchange the product for another one, be it similar or not.
 <br /><br/>
 You can return a product for up to 30 days from the date you purchased it.
 <br /><br />
