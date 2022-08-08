@@ -56,38 +56,40 @@ const Ships = () => {
     "West Bengal",
   ];
 
-  function selectState(postalcode){
-    if(postalcode.length<6  || postalcode.length>6)return;
+  function selectState(postalcode) {
+    if (postalcode.length < 6 || postalcode.length > 6) return;
 
-  //let data= axios.get(`https://www.geonames.org/postalCodeLookupJSON?&country=IN&postalcode=${postalcode}`,
-  let data= axios.get(`https://cors-anywhere.herokuapp.com/http://www.postalpincode.in/api/pincode/${postalcode}`,
-  
-  {
-    headers: {
-       "Content-Type": "application/json",
-       "Access-Control-Allow-Headers": "*",
-       "Access-Control-Allow-Origin": "*",
-       "Access-Control-Allow-Methods": "*"   ,
-       //'mode':'no-cors'
-    },
-  }
-  
-  ).then(res=> console.log(res))
-
+    let data = axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/http://www.postalpincode.in/api/pincode/${postalcode}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            //'mode':'no-cors'
+          },
+        }
+      )
+      .then((res) => {
+        let item, i;
+        res.data.PostOffice.map((item, i) => {
+          console.log(res.data.PostOffice[i].State);
+          setState(res.data.PostOffice[i].State);
+        });
+      });
   }
   const user = useSelector((state) => state.user);
 
   useEffect(async () => {
     await axios
-      .get(
-        "https://cerbosys.in:4000/draupadi/getAllAddress",
-        {
-          headers: {
-            // "Content-Type": "application/json",
-            Authorization: `Bearer ${user?.token}`,
-          },
-        }
-      )
+      .get("https://cerbosys.in:4000/draupadi/getAllAddress", {
+        headers: {
+          // "Content-Type": "application/json",
+          Authorization: `Bearer ${user?.token}`,
+        },
+      })
       .then((res) => {
         if (res.data.status == 200) {
           const i = res?.data?.data.length - 1;
@@ -378,10 +380,10 @@ const Ships = () => {
                       type="text"
                       // placeholder="Zip"
                       value={zip}
-                      onChange={(e) =>{
-                        
-                        selectState(e.target.value)
-                        setZip(e.target.value)}}
+                      onChange={(e) => {
+                        selectState(e.target.value);
+                        setZip(e.target.value);
+                      }}
                       required
                     />
                     <Form.Control.Feedback type="invalid">
@@ -392,7 +394,8 @@ const Ships = () => {
                   <Form.Group as={Col} md="3" controlId="validationCustom07">
                     <Form.Label>State</Form.Label>
                     <Form.Select
-                      defaultValue={state}
+                      value={state}
+                      // defaultValue={state}
                       onChange={(e) => setState(e.target.value)}
                     >
                       {statess.map((data, i) => {
@@ -405,7 +408,7 @@ const Ships = () => {
                     </Form.Select>
                   </Form.Group>
                 </Row>
-                 <Row className="mb-4">
+                <Row className="mb-4">
                   {/*<Form.Group as={Col} md="3" controlId="validationCustom22">
                     <Form.Label>Landmark</Form.Label>
                     <Form.Control
