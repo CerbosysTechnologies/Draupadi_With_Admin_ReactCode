@@ -18,7 +18,7 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { message } from "antd";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import moment from "moment";
 import { MdDeleteForever } from "react-icons/md";
 import { useHistory } from "react-router-dom";
@@ -133,6 +133,7 @@ const Cart = (props) => {
 
   console.log(user.token);
   const onlineProceedToCheckOut = async () => {
+   var razor_id;
     await axios
       .post(
         "https://cerbosys.in:4000/draupadi/proceedToCheckout",
@@ -154,8 +155,11 @@ const Cart = (props) => {
           },
         }
       )
-      .then((res) => {
+      .then((res) => 
+      {
         console.log("-------order id generating", res.data);
+        console.log("Rzor Order Id", res?.data?.razor_orderId)
+        razor_id = res?.data?.razor_orderId;
         setLoading(false);
         //--------------------------------------------------------------------------------------------------------------------------
         if (res.data.status == 200) {
@@ -182,16 +186,19 @@ const Cart = (props) => {
               alert("Razorpay failed");
               return;
             }
-
+          
             const options = {
               key: "rzp_live_YqvALqyXMO07xs", //"rzp_test_2bQ3mYU4FM9qdV", //"rzp_live_MtYL5wjLaA9IKU", // "rzp_test_2bQ3mYU4FM9qdV", // its TESTING ONE
+              //key: "rzp_test_2bQ3mYU4FM9qdV", //"rzp_test_2bQ3mYU4FM9qdV", //"rzp_live_MtYL5wjLaA9IKU", // "rzp_test_2bQ3mYU4FM9qdV", // its TESTING ONE
               amount: totalPrice * 100,
               currency: "INR",
               name: "Draupadi",
               description:
                 "We upcycle everything from sarees. There's more to her, there's more to sarees.",
               image: "https://cerbosys.in:4000/user/dp1.png",
-              order_id: res?.data?.razor_orderId, //UNCOMMENT IT
+              //order_id: res?.data?.razor_orderId, //UNCOMMENT IT
+              order_id: razor_id, //UNCOMMENT IT
+              
               handler: async function (response) {
                 console.log("response------ ", response);
                 console.log("payment-id-", response.razorpay_payment_id);
@@ -246,32 +253,32 @@ const Cart = (props) => {
                       console.log("Response", response.data.id);
                       //var idd = response.data;
                       dispatch({ type: "CLEAR_CART" });
-                      // toast(
-                      //   `Order has placed successfully, you will receive tracking details shortly 🥰😍 `,
-                      //   {
-                      //     position: "top-center",
-                      //     autoClose: 3000,
-                      //     hideProgressBar: true,
-                      //     closeOnClick: true,
-                      //     pauseOnHover: false,
-                      //     draggable: true,
-                      //     progress: undefined,
-                      //   }
-                      // );
+                      toast(
+                        `Order has placed successfully, you will receive tracking details shortly 🥰😍 `,
+                        {
+                          position: "top-center",
+                          autoClose: 3000,
+                          hideProgressBar: true,
+                          closeOnClick: true,
+                          pauseOnHover: false,
+                          draggable: true,
+                          progress: undefined,
+                        }
+                      );
                       history.push("/");
                     })
                     .catch((err) => {
                       setLoading(false);
                       console.log(err);
-                      // toast.error(`Oops, something went wrong `, {
-                      //   position: "top-center",
-                      //   autoClose: 3000,
-                      //   hideProgressBar: true,
-                      //   closeOnClick: true,
-                      //   pauseOnHover: false,
-                      //   draggable: true,
-                      //   progress: undefined,
-                      // });
+                      toast.error(`Oops, something went wrong `, {
+                        position: "top-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                      });
                     });
                 }
               },
@@ -281,34 +288,35 @@ const Cart = (props) => {
                 contact: user.shippingDetails.mobilenumber,
               },
             };
+            console.log("RazorPay Options", options);
             const paymentObject = new window.Razorpay(options);
             paymentObject.open();
           }
           displayRazorpay();
         } else {
-          // toast.error(`Oops, something went wrong `, {
-          //   position: "top-center",
-          //   autoClose: 3000,
-          //   hideProgressBar: true,
-          //   closeOnClick: true,
-          //   pauseOnHover: false,
-          //   draggable: true,
-          //   progress: undefined,
-          // });
+          toast.error(`Oops, something went wrong `, {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+          });
         }
       })
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        // toast(`Oops, something went wrong `, {
-        //   position: "top-center",
-        //   autoClose: 3000,
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: false,
-        //   draggable: true,
-        //   progress: undefined,
-        // });
+        toast(`Oops, something went wrong `, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
       });
   };
 
@@ -336,7 +344,7 @@ const Cart = (props) => {
         }
       )
       .then(async (res) => {
-        console.log("-------order id generating", res.data);
+        console.log("-------order id generating", res.data.orderId);
 
         await axios
           .post(
@@ -384,32 +392,32 @@ const Cart = (props) => {
             console.log("Response", response.data.id);
             // var idd = response.data;
             dispatch({ type: "CLEAR_CART" });
-            // toast(
-            //   `Order has placed successfully, you will receive tracking details shortly🥰😍 `,
-            //   {
-            //     position: "top-center",
-            //     autoClose: 3000,
-            //     hideProgressBar: true,
-            //     closeOnClick: true,
-            //     pauseOnHover: false,
-            //     draggable: true,
-            //     progress: undefined,
-            //   }
-            // );
+            toast(
+              `Order has placed successfully, you will receive tracking details shortly🥰😍 `,
+              {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+              }
+            );
             history.push("/");
           })
           .catch((err) => {
             setLoading(false);
             console.log(err);
-            // toast(`Something went wrong `, {
-            //   position: "top-center",
-            //   autoClose: 3000,
-            //   hideProgressBar: true,
-            //   closeOnClick: true,
-            //   pauseOnHover: false,
-            //   draggable: true,
-            //   progress: undefined,
-            // });
+            toast(`Something went wrong `, {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+            });
           });
       });
   };
